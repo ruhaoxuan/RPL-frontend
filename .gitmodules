@@ -1,0 +1,4 @@
+[submodule "vendor/RPL"]
+	path = vendor/RPL
+	url = https://github.com/RPL-Toolchain/RPL.git
+	branch = master
