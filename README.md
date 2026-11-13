@@ -34,7 +34,7 @@ npm run dev
 git submodule update --init --recursive
 ```
 
-打开终端显示的地址，默认是 http://127.0.0.1:5173/。`dev` 会先生成展示数据。停止服务按 `Ctrl + C`。
+打开终端显示的地址，默认是 [http://127.0.0.1:5173/](http://127.0.0.1:5173/)。`dev` 会先生成展示数据。停止服务按 `Ctrl + C`。
 
 ## 构建与测试
 
