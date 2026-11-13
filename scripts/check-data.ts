@@ -5,79 +5,9 @@ import {
   allowedManifestSchema,
   assertCatalogMatchesAllowlist,
 } from "./allowlist";
-import { z } from "zod";
-import type { Catalog } from "../src/domain/model";
+import { catalogSchema } from "../src/domain/catalog";
 const raw = JSON.parse(await readFile("public/generated/catalog.json", "utf8"));
-z.object({
-  manifest: z.object({
-    schemaVersion: z.literal(3),
-    dataPolicy: z.literal("curated-allowlist"),
-    sourceCommit: z.string().regex(/^[a-f0-9]{40}$/),
-  }),
-  patterns: z.array(
-    z.object({
-      id: z.string(),
-      source: z.enum(["clippy", "codeql", "cve", "other"]),
-      detectionStatus: z.enum(["detectable", "undetectable", "pending"]),
-      fileId: z.string(),
-      diagnostics: z
-        .array(
-          z.object({
-            id: z.string(),
-            lintName: z.string(),
-            declaredLevel: z.string().nullable(),
-            effectiveLevel: z.string(),
-            startLine: z.number().int().positive(),
-            endLine: z.number().int().positive(),
-            rules: z.array(
-              z.object({ name: z.string(), line: z.number().int().positive() }),
-            ),
-            fields: z.array(
-              z.object({
-                key: z.string(),
-                args: z.string().nullable(),
-                text: z.string(),
-                raw: z.string(),
-                line: z.number().int().positive(),
-              }),
-            ),
-          }),
-        )
-        .min(1),
-    }),
-  ),
-  instances: z.array(
-    z.object({
-      id: z.string(),
-      type: z.enum(["positive", "negative"]),
-      patternIds: z.array(z.string()).min(1),
-      start: z.number().int().positive(),
-      end: z.number().int().positive(),
-      actualResult: z.enum(["match", "no_match", "not_run", "error"]),
-      expectedResult: z.enum(["match", "no_match"]),
-      diagnosticLines: z.array(z.number().int().positive()),
-      baselineReferences: z.array(
-        z.object({
-          path: z.string(),
-          githubUrl: z.string().url(),
-          profile: z.string(),
-          containsTargetDiagnostic: z.boolean(),
-          sha256: z.string(),
-        }),
-      ),
-    }),
-  ),
-  files: z.array(
-    z.object({
-      id: z.string(),
-      asset: z.string(),
-      path: z.string(),
-      githubUrl: z.string().url(),
-      updatedAt: z.string().datetime({ offset: true }),
-    }),
-  ),
-}).parse(raw);
-const data = raw as Catalog;
+const data = catalogSchema.parse(raw);
 for (const list of [data.patterns, data.instances, data.files])
   if (new Set(list.map((x) => x.id)).size !== list.length)
     throw Error("重复 ID");

@@ -52,7 +52,7 @@ def read_rows(file):
                 col = re.sub(r'\d', '', c.get('r')); value = c.find('m:v', NS)
                 if value is not None: text = strings[int(value.text)] if c.get('t') == 's' else value.text or ''
                 else: text = ''.join(c.find('m:is', NS).itertext()) if c.find('m:is', NS) is not None else ''
-                if text: result[col] = (text.strip(), c)
+                if text and text.strip(): result[col] = (text.strip(), c)
             return result
         header = {text: col for col, (text, _) in values(all_rows[0]).items()}
         required = ['模式名称', 'diag.name', '模式所属来源', '风险实例', '检测结果', '是否为风险实例']
@@ -60,7 +60,10 @@ def read_rows(file):
         result = []
         for row in all_rows[1:]:
             cells = values(row)
-            if header['模式名称'] not in cells: continue
+            if not cells: continue
+            for name in ['模式名称', 'diag.name', '模式所属来源', '风险实例', '是否为风险实例']:
+                if header[name] not in cells:
+                    raise ValueError(f'第 {row.get("r")} 行缺少 {name}')
             v = {name: cells.get(col, ('', None))[0] for name, col in header.items()}
             kinds = []
             for name in ['模式名称', '风险实例', '模式所属来源', '是否为风险实例']:

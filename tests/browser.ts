@@ -303,6 +303,34 @@ try {
     errorPage.getByRole("heading", { name: "知识库数据加载失败" }),
   ).toBeVisible();
   await errorPage.close();
+  for (const payload of [
+    {},
+    { ...data, manifest: { ...data.manifest, schemaVersion: 2 } },
+  ]) {
+    const invalidPage = await context.newPage();
+    invalidPage.on("pageerror", (e) => errors.push(e.message));
+    await invalidPage.route("**/generated/catalog.json", (r) =>
+      r.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(payload),
+      }),
+    );
+    await invalidPage.goto(base);
+    await expect(
+      invalidPage.getByRole("heading", { name: "知识库数据加载失败" }),
+    ).toBeVisible();
+    await expect(
+      invalidPage.getByRole("button", { name: "重新加载" }),
+    ).toBeVisible();
+    await invalidPage.unroute("**/generated/catalog.json");
+    await invalidPage.getByRole("button", { name: "重新加载" }).click();
+    await expect(
+      invalidPage.getByRole("heading", { name: "RPL Atlas" }),
+    ).toBeVisible();
+    await invalidPage.close();
+  }
+  expect(errors).toEqual([]);
   await writeFile(
     "test-results/browser-result.json",
     JSON.stringify(

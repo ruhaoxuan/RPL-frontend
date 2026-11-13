@@ -54,6 +54,7 @@ import {
   verdict,
   resultLabels,
 } from "./domain/model";
+import { catalogSchema } from "./domain/catalog";
 import { selectPatterns } from "./domain/search";
 import styles from "./styles/app.module.css";
 import { DiagnosticsPanel } from "./components/DiagnosticsPanel";
@@ -1131,7 +1132,7 @@ function App() {
         if (!r.ok) throw Error();
         return r.json();
       })
-      .then(setData)
+      .then((value: unknown) => setData(catalogSchema.parse(value)))
       .catch(() => setError(true));
   }, []);
   if (error)
