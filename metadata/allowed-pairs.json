@@ -1,0 +1,2232 @@
+{
+  "schemaVersion": 1,
+  "sourceWorkbook": "rpl_pattern_instances_analysis-2026-10-19-hby.xlsx",
+  "workbookSha256": "82496d72f28f7e80455fd65510815b76c54476f163f1fb60ce540c68ca589d84",
+  "sheetName": "rpl_pattern_instances_analysis-",
+  "importedAt": "2026-11-12T03:51:38.517891+00:00",
+  "reviewedSourceCommit": "6fb85147beebab261f1df22db9dccf35f4ead641",
+  "pairs": [
+    {
+      "spreadsheetRow": 2,
+      "patternId": "clippy/cast-slice-different-sizes",
+      "patternFile": "docs/patterns-pest/clippy/cast-slice-different-sizes.rpl",
+      "instanceFile": "tests/ui/clippy/cast_slice_different_sizes.rs",
+      "id": "pair-ec9eefd9bb25d720",
+      "diagNames": [
+        "cast_slice_different_sizes"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/cast_slice_different_sizes.stderr"
+      ],
+      "note": "",
+      "patternSha256": "96bbc750e1abe38c06ff3dfc930c8dee4ac7938d2f8c426ae016768a9c2bb861",
+      "instanceSha256": "734a68dbc856c4c98cef851483e6e70647fb7b79b908b518e5e7bd0d69501571"
+    },
+    {
+      "spreadsheetRow": 3,
+      "patternId": "clippy/cast-slice-different-sizes",
+      "patternFile": "docs/patterns-pest/clippy/cast-slice-different-sizes.rpl",
+      "instanceFile": "tests/ui/ub/cast_slice_different_sizes/lib.rs",
+      "id": "pair-590164862d99574c",
+      "diagNames": [
+        "cast_slice_different_sizes"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/ub/cast_slice_different_sizes/lib.stderr"
+      ],
+      "note": "",
+      "patternSha256": "96bbc750e1abe38c06ff3dfc930c8dee4ac7938d2f8c426ae016768a9c2bb861",
+      "instanceSha256": "8012a75f50e945d03aafb413245ac4c545b25befd7307022a61b8e8e6375f014"
+    },
+    {
+      "spreadsheetRow": 4,
+      "patternId": "clippy/cast-slice-from-raw-parts",
+      "patternFile": "docs/patterns-pest/clippy/cast-slice-from-raw-parts.rpl",
+      "instanceFile": "tests/ui/clippy/cast_raw_slice_pointer_cast.rs",
+      "id": "pair-c9eac1a5263d8644",
+      "diagNames": [
+        "cast_slice_from_raw_parts"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/cast_raw_slice_pointer_cast.stderr"
+      ],
+      "note": "",
+      "patternSha256": "5380e0688617732e55ca4f79da48504a270c1da5eeaa6cf3399b090c6bff4132",
+      "instanceSha256": "1ca6b1d3964b6733e11a3184501da8283f6e64f6ead8c7746fe7636ccd402369"
+    },
+    {
+      "spreadsheetRow": 5,
+      "patternId": "clippy/cast-slice-from-raw-parts",
+      "patternFile": "docs/patterns-pest/clippy/cast-slice-from-raw-parts.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_29935/simplified.rs",
+      "id": "pair-658f11c04b8433b2",
+      "diagNames": [
+        "cast_slice_from_raw_parts"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_29935/simplified.inline.stderr"
+      ],
+      "note": "",
+      "patternSha256": "5380e0688617732e55ca4f79da48504a270c1da5eeaa6cf3399b090c6bff4132",
+      "instanceSha256": "9f6fb26f28e0f2df7df4524e2e23df05f4857c0387949426d03c2f64c5429c38"
+    },
+    {
+      "spreadsheetRow": 6,
+      "patternId": "clippy/eager-transmute",
+      "patternFile": "docs/patterns-pest/clippy/eager-transmute.rpl",
+      "instanceFile": "tests/ui/clippy/eager_transmute.rs",
+      "id": "pair-8f2d0ab0c5348594",
+      "diagNames": [
+        "eager_transmute"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/eager_transmute.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "3f55b311a864fa6c2b106d066770ddf07454fccbb35c9c58edc6bb36c4579621",
+      "instanceSha256": "cb4e43ee819393cd02f14d35a3273e2ce1ea06307c0054a3fb1892c81a4f7875"
+    },
+    {
+      "spreadsheetRow": 7,
+      "patternId": "clippy/from-raw-with-void-ptr",
+      "patternFile": "docs/patterns-pest/clippy/from-raw-with-void-ptr.rpl",
+      "instanceFile": "tests/ui/clippy/from_raw_with_void_ptr.rs",
+      "id": "pair-e2b6c2fd042fbd5e",
+      "diagNames": [
+        "from_raw_with_void_ptr"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/from_raw_with_void_ptr.stderr"
+      ],
+      "note": "",
+      "patternSha256": "249d46131a501f961fc734bec251d264778fb7d920a23efebb46cea471366368",
+      "instanceSha256": "1a00a64b83ee63f958a007771522b80970c3af73861688e293b713dce775b9a0"
+    },
+    {
+      "spreadsheetRow": 8,
+      "patternId": "clippy/mem-replace-with-uninit",
+      "patternFile": "docs/patterns-pest/clippy/mem-replace-with-uninit.rpl",
+      "instanceFile": "tests/ui/clippy/repl_uninit.rs",
+      "id": "pair-bec0f296840a47b2",
+      "diagNames": [
+        "mem_replace_with_uninit"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/repl_uninit.inline.stderr",
+        "tests/ui/clippy/repl_uninit.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "26766c1e16e0d4bec096f02d618f0d9478bc910d3e0d8671e9c64580f6de411f",
+      "instanceSha256": "d106d5915c3ca9d16b84bc84209610c43b651529b2295e247d6d37fda8518cad"
+    },
+    {
+      "spreadsheetRow": 9,
+      "patternId": "clippy/mut-from-ref",
+      "patternFile": "docs/patterns-pest/clippy/mut-from-ref.rpl",
+      "instanceFile": "tests/ui/clippy/mut_from_ref.rs",
+      "id": "pair-a00239ec666ed41a",
+      "diagNames": [
+        "mut_from_ref"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/mut_from_ref.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e0ccc3a0f3dde657cf33d87ec74d920bc402859d295a95dbba33b70db6652fe5",
+      "instanceSha256": "71b4dcd807677371ab0f033f5960b8d78c5767e26e36216aa05fd4ed6d0dd5a4"
+    },
+    {
+      "spreadsheetRow": 11,
+      "patternId": "clippy/not-unsafe-ptr-arg-deref",
+      "patternFile": "docs/patterns-pest/clippy/not-unsafe-ptr-arg-deref.rpl",
+      "instanceFile": "tests/ui/clippy/functions.rs",
+      "id": "pair-6f650c7ef02c3651",
+      "diagNames": [
+        "not_unsafe_ptr_arg_deref"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/functions.inline.stderr",
+        "tests/ui/clippy/functions.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "03e306bcd4981eaf277f5560987d8e027d6651b59ec75ad7c6084948e57b3b1d",
+      "instanceSha256": "f51a4d3c0cde0f6f5948cb9abce687b99711cb74f5e8761f524a22732155a197"
+    },
+    {
+      "spreadsheetRow": 12,
+      "patternId": "clippy/ptr-offset-with-cast",
+      "patternFile": "docs/patterns-pest/clippy/ptr-offset-with-cast.rpl",
+      "instanceFile": "tests/ui/clippy/ptr_offset_with_cast.rs",
+      "id": "pair-3a0c1f1f65ec9df2",
+      "diagNames": [
+        "ptr_offset_with_cast"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/ptr_offset_with_cast.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e047f082f0dc32d43d8e0861d43d1caa746f349de89a423d24fbf371b6cdf2f5",
+      "instanceSha256": "c7127679d4237198b5410fd099faa612be4ccd9a5bb20fb9e42a34e6c321cac5"
+    },
+    {
+      "spreadsheetRow": 19,
+      "patternId": "clippy/size-of-in-element-count",
+      "patternFile": "docs/patterns-pest/clippy/size-of-in-element-count.rpl",
+      "instanceFile": "tests/ui/clippy/size_of_in_element_count/expressions.rs",
+      "id": "pair-a6a3d5e16e28c8cf",
+      "diagNames": [
+        "size_of_in_element_count"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/size_of_in_element_count/expressions.stderr"
+      ],
+      "note": "",
+      "patternSha256": "ab709f8a295448f4d1ed19d99be03ddf80eec918ed41de2773415920833f9511",
+      "instanceSha256": "bf1da93854d86a8b78aeb392a48cca7bd8dd82be8661999684c946912ad77d11"
+    },
+    {
+      "spreadsheetRow": 21,
+      "patternId": "clippy/swap-ptr-to-ref",
+      "patternFile": "docs/patterns-pest/clippy/swap-ptr-to-ref.rpl",
+      "instanceFile": "tests/ui/clippy/swap_ptr_to_ref.rs",
+      "id": "pair-6a71ba7bff801936",
+      "diagNames": [
+        "swap_ptr_to_ref"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/swap_ptr_to_ref.inline.stderr",
+        "tests/ui/clippy/swap_ptr_to_ref.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "a0e8415ab59bb3009f9601e70b1ae9b06dcd2cc579f66571c262d6426489136d",
+      "instanceSha256": "eaf8c70da63e85daa02891496b3698b80c0892aaea9a63c5e69eed77736208f9"
+    },
+    {
+      "spreadsheetRow": 22,
+      "patternId": "clippy/swap-ptr-to-ref",
+      "patternFile": "docs/patterns-pest/clippy/swap-ptr-to-ref.rpl",
+      "instanceFile": "tests/ui/clippy/swap_ptr_to_ref_unfixable.rs",
+      "id": "pair-75b9459e3f42cab3",
+      "diagNames": [
+        "swap_ptr_to_ref"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/swap_ptr_to_ref_unfixable.stderr"
+      ],
+      "note": "",
+      "patternSha256": "a0e8415ab59bb3009f9601e70b1ae9b06dcd2cc579f66571c262d6426489136d",
+      "instanceSha256": "0781c3380f5e9c6402ccab39176dc491807cc1120dad71374de98ce0b52496bf"
+    },
+    {
+      "spreadsheetRow": 24,
+      "patternId": "clippy/transmute-int-to-non-zero",
+      "patternFile": "docs/patterns-pest/clippy/transmute-int-to-non-zero.rpl",
+      "instanceFile": "tests/ui/clippy/transmute_int_to_non_zero.rs",
+      "id": "pair-f2ff8e6db2fff0a8",
+      "diagNames": [
+        "transmute_int_to_non_zero"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/transmute_int_to_non_zero.stderr"
+      ],
+      "note": "",
+      "patternSha256": "02b8a3820a1a25ee925ae0b1c889c233e6a4a3b71311f1ad6fe1cf80efacc4f2",
+      "instanceSha256": "698567d28cfeb9c1bdc2694b28dcbf4be54940908281b006952e50cc9e15a194"
+    },
+    {
+      "spreadsheetRow": 25,
+      "patternId": "clippy/transmute-null-to-fn",
+      "patternFile": "docs/patterns-pest/clippy/transmute-null-to-fn.rpl",
+      "instanceFile": "tests/ui/clippy/transmute_null_to_fn.rs",
+      "id": "pair-bb2b2ccfb18eb709",
+      "diagNames": [
+        "transmute_null_to_fn"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/transmute_null_to_fn.inline.stderr",
+        "tests/ui/clippy/transmute_null_to_fn.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "bc00ac4400e30da4ddc9bbc40d982c498409bce4bc71844d84220fb729958f68",
+      "instanceSha256": "622f63cf4a2873f7711df4d97f8ead279b80b73cf1b623e0ca53902ebba6bed1"
+    },
+    {
+      "spreadsheetRow": 26,
+      "patternId": "clippy/transmuting-null",
+      "patternFile": "docs/patterns-pest/clippy/transmuting-null.rpl",
+      "instanceFile": "tests/ui/clippy/transmuting_null.rs",
+      "id": "pair-3e78f14b96a7e349",
+      "diagNames": [
+        "transmuting_null"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/transmuting_null.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "524c00e3cb486c66f6ccdd57426544fad99e3983a3896b42cba093a0fce1db08",
+      "instanceSha256": "320cc1cf1877e3c3156b772e45360453aaedd5c38d9544b22afd68dfc4d2b9ba"
+    },
+    {
+      "spreadsheetRow": 27,
+      "patternId": "clippy/uninit-assumed-init",
+      "patternFile": "docs/patterns-pest/clippy/uninit-assumed-init.rpl",
+      "instanceFile": "tests/ui/clippy/uninit.rs",
+      "id": "pair-67732d5d2a83237a",
+      "diagNames": [
+        "uninit_assumed_init"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/uninit.inline.stderr",
+        "tests/ui/clippy/uninit.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "3ddb819c6364cceba43adef437d5045496f20baf0eb8f57fdfc9da62ea34104d",
+      "instanceSha256": "6b44f4e095f71f6a922961d691d59c914d1efaaea29c4a02c07bd79342a8bcfe"
+    },
+    {
+      "spreadsheetRow": 28,
+      "patternId": "clippy/uninit-vec",
+      "patternFile": "docs/patterns-pest/clippy/uninit-vec.rpl",
+      "instanceFile": "tests/ui/clippy/uninit_vec.rs",
+      "id": "pair-8e3f82fbea10312d",
+      "diagNames": [
+        "uninit_vec"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/uninit_vec.stderr"
+      ],
+      "note": "",
+      "patternSha256": "3d72c7169b92132c7ec60e78f150ec5b92fdb76c5a7fd6541941377c1093af59",
+      "instanceSha256": "11514074f5b4c3775700f207cef7b2b671b9aff5326d9a268784e50b972658d5"
+    },
+    {
+      "spreadsheetRow": 36,
+      "patternId": "clippy/unsound-collection-transmute",
+      "patternFile": "docs/patterns-pest/clippy/unsound-collection-transmute.rpl",
+      "instanceFile": "tests/ui/clippy/transmute_collection.rs",
+      "id": "pair-c5adbedc6fd65105",
+      "diagNames": [
+        "unsound_collection_transmute"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/transmute_collection.inline.stderr",
+        "tests/ui/clippy/transmute_collection.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e43ddc324c8eeba3627b949747693c447b47697a3278b2e732c51f4cb908ce02",
+      "instanceSha256": "56e345bec83228d1e8b72f872871bed2c6cf67cee6959fe0eaa208b5114184f1"
+    },
+    {
+      "spreadsheetRow": 37,
+      "patternId": "clippy/unsound-collection-transmute",
+      "patternFile": "docs/patterns-pest/clippy/unsound-collection-transmute.rpl",
+      "instanceFile": "tests/ui/ub/unsound_collection_transmute/lib.rs",
+      "id": "pair-a0b5370c1248715f",
+      "diagNames": [
+        "unsound_collection_transmute"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/ub/unsound_collection_transmute/lib.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e43ddc324c8eeba3627b949747693c447b47697a3278b2e732c51f4cb908ce02",
+      "instanceSha256": "f712cae919af2d49b824f5365f95aa7d476d00d7a9f014d652adad755c095e17"
+    },
+    {
+      "spreadsheetRow": 38,
+      "patternId": "clippy/wrong-transmute",
+      "patternFile": "docs/patterns-pest/clippy/wrong-transmute.rpl",
+      "instanceFile": "tests/ui/clippy/transmute_32bit.rs",
+      "id": "pair-4e8fa95b165e1e4f",
+      "diagNames": [
+        "wrong_transmute"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/transmute_32bit.stderr"
+      ],
+      "note": "",
+      "patternSha256": "033cb7f2ec7f0bdb85d7ab3b19056073a3de501fd7a1057c81e561ce524183e9",
+      "instanceSha256": "0288f1adfc052252f71f52a39f445164e38ba767c6d68479fa9d2a6d29a6febe"
+    },
+    {
+      "spreadsheetRow": 39,
+      "patternId": "clippy/wrong-transmute",
+      "patternFile": "docs/patterns-pest/clippy/wrong-transmute.rpl",
+      "instanceFile": "tests/ui/clippy/transmute_64bit.rs",
+      "id": "pair-a76b35c359d13c89",
+      "diagNames": [
+        "wrong_transmute"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/transmute_64bit.inline.stderr",
+        "tests/ui/clippy/transmute_64bit.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "033cb7f2ec7f0bdb85d7ab3b19056073a3de501fd7a1057c81e561ce524183e9",
+      "instanceSha256": "7c3d1f6c5f625d76f1d96916e8e719a8c77fa386dc490c305ee7b9b80cdffbbd"
+    },
+    {
+      "spreadsheetRow": 40,
+      "patternId": "clippy/zst-offset",
+      "patternFile": "docs/patterns-pest/clippy/zst-offset.rpl",
+      "instanceFile": "tests/ui/clippy/zst_offset.rs",
+      "id": "pair-fa61ed2305ab20d5",
+      "diagNames": [
+        "zst_offset"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/clippy/zst_offset.inline.stderr",
+        "tests/ui/clippy/zst_offset.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "b7ed3f4f2a2b2be704cbd94ced8609ace1d7ae1bba6146d01e6bc8f30493f137",
+      "instanceSha256": "6f18dfe08ebbf6e4a14080b8383c8b8af4d5564215cd06067b1a86dc7d185c44"
+    },
+    {
+      "spreadsheetRow": 41,
+      "patternId": "codeql/access-after-lifetime-ended",
+      "patternFile": "docs/patterns-pest/codeql/access-after-lifetime-ended.rpl",
+      "instanceFile": "tests/ui/codeql/access_after_lifetime_ended.rs",
+      "id": "pair-b5e9a3b5bfccab5c",
+      "diagNames": [
+        "access_after_lifetime_ended"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/codeql/access_after_lifetime_ended.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e12685c85a7dc7e1962da5c7cfe1c3051b6a50f47f3df413559261ab5de538ec",
+      "instanceSha256": "3475a6a901252ad12d3c89f96c10a47111f506a023726b23a4e28786569e3a9a"
+    },
+    {
+      "spreadsheetRow": 42,
+      "patternId": "codeql/access-invalid-pointer",
+      "patternFile": "docs/patterns-pest/codeql/access-invalid-pointer.rpl",
+      "instanceFile": "tests/ui/codeql/access_invalid_pointer.rs",
+      "id": "pair-bb4d4624ef2264bf",
+      "diagNames": [
+        "access_invalid_pointer"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/codeql/access_invalid_pointer.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e637d073705b686e288e45061752f901b9bf5fc92b7cd8949df367fd84e0d194",
+      "instanceSha256": "abbecc2fa46511e83e74797eaaf009d9ed6b8f8d7b74a8afcc628cce590d6c16"
+    },
+    {
+      "spreadsheetRow": 43,
+      "patternId": "codeql/ctor-initialization",
+      "patternFile": "docs/patterns-pest/codeql/ctor-initialization.rpl",
+      "instanceFile": "tests/ui/codeql/ctor_initialization.rs",
+      "id": "pair-e546be1b891a68d7",
+      "diagNames": [
+        "ctor_initialization_print",
+        "ctor_initialization_stdout"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/codeql/ctor_initialization.stderr"
+      ],
+      "note": "",
+      "patternSha256": "8e88b6e198d352f8771a4e83d6039978356289d8c8a0583202f002d3b5018d7b",
+      "instanceSha256": "d995112dbf71fbd0e4925546e19a4249a4070629a3a28d6e898940b7bffdebb5"
+    },
+    {
+      "spreadsheetRow": 44,
+      "patternId": "cve/CVE-2018-20992",
+      "patternFile": "docs/patterns-pest/cve/CVE-2018-20992.rpl",
+      "instanceFile": "tests/ui/cve/cve_2018_20992/cve_2018_20992.rs",
+      "id": "pair-cf75087af5dc4a1f",
+      "diagNames": [
+        "set_len_to_extend"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2018_20992/cve_2018_20992.stderr"
+      ],
+      "note": "",
+      "patternSha256": "b50295e338f7ea820a338ab2679ac2b50745746a9a966a9ba62caa760a14da09",
+      "instanceSha256": "685bfef587a4cfef373d9cce1da6d7410a4fefe5ec0db0351c059eac983b7f12"
+    },
+    {
+      "spreadsheetRow": 45,
+      "patternId": "cve/CVE-2018-21000",
+      "patternFile": "docs/patterns-pest/cve/CVE-2018-21000.rpl",
+      "instanceFile": "tests/ui/cve/cve_2018_21000/simplified.rs",
+      "id": "pair-a07fe00424ae07eb",
+      "diagNames": [
+        "misordered_parameters"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2018_21000/simplified.stderr"
+      ],
+      "note": "",
+      "patternSha256": "813d5a144fc4d02efd75e8398ef39dc04980f0377da066347c574729b5d126a5",
+      "instanceSha256": "8b1ccb359ca1824db3ac2cc219aae42d74a99dab50e3f3d090e86f88dc23226f"
+    },
+    {
+      "spreadsheetRow": 46,
+      "patternId": "cve/CVE-2018-21000",
+      "patternFile": "docs/patterns-pest/cve/CVE-2018-21000.rpl",
+      "instanceFile": "tests/ui/cve/cve_2018_21000/simplified_patched.rs",
+      "id": "pair-186ca69d9ed1c432",
+      "diagNames": [
+        "misordered_parameters"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "813d5a144fc4d02efd75e8398ef39dc04980f0377da066347c574729b5d126a5",
+      "instanceSha256": "52b9dc8bcf6d2e7cec3378097f4769b0f2cedadda981ba47e0881a897605f5ae"
+    },
+    {
+      "spreadsheetRow": 47,
+      "patternId": "cve/CVE-2019-15543",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-15543.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_15543/cve_2019_15543.rs",
+      "id": "pair-d22573e05ca5d65b",
+      "diagNames": [
+        "suspicious_integer_wrap"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2019_15543/cve_2019_15543.stderr"
+      ],
+      "note": "",
+      "patternSha256": "4a87c534112a7ea865be380b59d481beeaa53370146ac2a19c5abeece1f2b74f",
+      "instanceSha256": "0f1a674a231cdc08e739977310e84ac7aa0a15278e6f3765f9295262d34c28d5"
+    },
+    {
+      "spreadsheetRow": 48,
+      "patternId": "cve/CVE-2019-15543",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-15543.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_15543/cve_2019_15543_cross_stmt.rs",
+      "id": "pair-856d5b2d639a3fe0",
+      "diagNames": [
+        "suspicious_integer_wrap"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2019_15543/cve_2019_15543_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "4a87c534112a7ea865be380b59d481beeaa53370146ac2a19c5abeece1f2b74f",
+      "instanceSha256": "04b527ba6e93566a810e8ce3cfbc0e25a9e18ca31b6c393a5dcc0f732ae5760b"
+    },
+    {
+      "spreadsheetRow": 49,
+      "patternId": "cve/CVE-2019-15543",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-15543.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_15543/cve_2019_15543_patched.rs",
+      "id": "pair-80ddc1fb7fb36996",
+      "diagNames": [
+        "suspicious_integer_wrap"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "4a87c534112a7ea865be380b59d481beeaa53370146ac2a19c5abeece1f2b74f",
+      "instanceSha256": "25ba533d0f81488e6aefb96cdf6e2619b340c4df4768fadff2cdcab21b2d5a13"
+    },
+    {
+      "spreadsheetRow": 50,
+      "patternId": "cve/CVE-2019-15548",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-15548.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_15548/cve_2019_15548.rs",
+      "id": "pair-04220ae77442f7a3",
+      "diagNames": [
+        "lengthless_buffer_passed_to_extern_function",
+        "rust_string_pointer_as_c_string_pointer"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2019_15548/cve_2019_15548.inline.stderr",
+        "tests/ui/cve/cve_2019_15548/cve_2019_15548.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "a101d4240233ffafb2c1504c310497fdf77a3fabf7b5eae0b9c625d6ad42f888",
+      "instanceSha256": "9578e0e44d53a5f078b529fa4ca57c3df942c61479723d8c3dfb6ef2a30a7470"
+    },
+    {
+      "spreadsheetRow": 51,
+      "patternId": "cve/CVE-2019-15551",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-15551.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_15551/cve_2019_15551.rs",
+      "id": "pair-265e6d4910e399dd",
+      "diagNames": [
+        "double_drop_on_corner_case"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2019_15551/cve_2019_15551.inline.stderr"
+      ],
+      "note": "",
+      "patternSha256": "ad9e6a5c9a2c551b72606148b387ef96b2da0325fc5825ebb88131f33f92ddf9",
+      "instanceSha256": "1de0fd3dfcc0e5518664b7562bb3c63a1c3bcf33b140dee613253efff4c8b948"
+    },
+    {
+      "spreadsheetRow": 52,
+      "patternId": "cve/CVE-2019-15551",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-15551.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_15551/cve_2019_15551_cross_fn.rs",
+      "id": "pair-52d119a2521c93a4",
+      "diagNames": [
+        "double_drop_on_corner_case"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2019_15551/cve_2019_15551_cross_fn.inline.stderr"
+      ],
+      "note": "",
+      "patternSha256": "ad9e6a5c9a2c551b72606148b387ef96b2da0325fc5825ebb88131f33f92ddf9",
+      "instanceSha256": "257f08cd4cc4c2859aed8fe176006a88485375455980392fdadbaa0bb3f9311b"
+    },
+    {
+      "spreadsheetRow": 53,
+      "patternId": "cve/CVE-2019-15551",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-15551.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_15551/cve_2019_15551_patched.rs",
+      "id": "pair-b03ea9fd217eed25",
+      "diagNames": [
+        "double_drop_on_corner_case"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "ad9e6a5c9a2c551b72606148b387ef96b2da0325fc5825ebb88131f33f92ddf9",
+      "instanceSha256": "4a45235bf0821038357b5d7c689f85e7180ace75a889f93f9c6bd6bd209cf905"
+    },
+    {
+      "spreadsheetRow": 55,
+      "patternId": "cve/CVE-2019-16138",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-16138.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_16138/simplified.rs",
+      "id": "pair-2e8bbf328f99836d",
+      "diagNames": [
+        "set_len_uninitialized"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2019_16138/simplified.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "7e8480824ce4af7622ef6b97b583d52a44843bae4fe973a025db670b8db54140",
+      "instanceSha256": "26ea7488c6c0518eb995cc9cd5cec93fb1f76c4924622095a543a213fa48d6e6"
+    },
+    {
+      "spreadsheetRow": 56,
+      "patternId": "cve/CVE-2019-16138",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-16138.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_16138/simplified_patched.rs",
+      "id": "pair-91c45882fea79217",
+      "diagNames": [
+        "set_len_uninitialized"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "7e8480824ce4af7622ef6b97b583d52a44843bae4fe973a025db670b8db54140",
+      "instanceSha256": "34e4c6d44515c5a307823a8da77bd2974c41a5b61e9a7cef986eb9bb18731040"
+    },
+    {
+      "spreadsheetRow": 57,
+      "patternId": "cve/CVE-2019-16138",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-16138.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_16138/src/lib.rs",
+      "id": "pair-86afdfb5613f3e41",
+      "diagNames": [
+        "set_len_uninitialized"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2019_16138/src/lib.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "7e8480824ce4af7622ef6b97b583d52a44843bae4fe973a025db670b8db54140",
+      "instanceSha256": "8f7d8ffc4d1dcdafd4b7c6d8e682f62fa97b0e42db801fe03375a64f14889a7e"
+    },
+    {
+      "spreadsheetRow": 62,
+      "patternId": "cve/CVE-2020-25016",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-25016.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_25016/cve_2020_25016.rs",
+      "id": "pair-f6a6502b91ecd5de",
+      "diagNames": [
+        "unsound_slice_cast"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_25016/cve_2020_25016.stderr"
+      ],
+      "note": "",
+      "patternSha256": "92f841fbd44b27158b1eb4695b857f494084fba157fc4e9d16607e9e5778c99b",
+      "instanceSha256": "1f30cabb937b3525ddb00b4401cf09d925cafcc230af1e0c0172745e3d66bc3c"
+    },
+    {
+      "spreadsheetRow": 63,
+      "patternId": "cve/CVE-2020-25795",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-25795.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_25795/minimal.rs",
+      "id": "pair-f41934f58d770adb",
+      "diagNames": [
+        "panic_safety"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_25795/minimal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "44f9de90490c319450926eb37084310ca070554722a9e5e3bed5f87a066cc7b3",
+      "instanceSha256": "50500de8c013daec492f2bb8363a96a3363521bfc713c816ee7a23361ec75938"
+    },
+    {
+      "spreadsheetRow": 64,
+      "patternId": "cve/CVE-2020-35860",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35860.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35860/cve_2020_35860.rs",
+      "id": "pair-eb5c21e5e269372e",
+      "diagNames": [
+        "deref_null_pointer"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35860/cve_2020_35860.stderr"
+      ],
+      "note": "",
+      "patternSha256": "72bbf49cbcf94ec7fb1a628531bb2ead8cc1bc2acb9d0a37aecee1d693aa3215",
+      "instanceSha256": "b8a43ac913dc97af7494099c5b7a4c79ac61a5a6092ccf77a7ce829857cb0c10"
+    },
+    {
+      "spreadsheetRow": 65,
+      "patternId": "cve/CVE-2020-35860",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35860.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35860/cve_2020_35860_cross_fn.rs",
+      "id": "pair-6b0ed0af75916a32",
+      "diagNames": [
+        "deref_null_pointer"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35860/cve_2020_35860_cross_fn.stderr"
+      ],
+      "note": "",
+      "patternSha256": "72bbf49cbcf94ec7fb1a628531bb2ead8cc1bc2acb9d0a37aecee1d693aa3215",
+      "instanceSha256": "939aceb1884185c535a2a9ec6786f70129f746a35d77d53976af9912e0daba52"
+    },
+    {
+      "spreadsheetRow": 66,
+      "patternId": "cve/CVE-2020-35860",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35860.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35860/cve_2020_35860_cross_stmt.rs",
+      "id": "pair-e7c162eb788a11e0",
+      "diagNames": [
+        "deref_null_pointer"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35860/cve_2020_35860_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "72bbf49cbcf94ec7fb1a628531bb2ead8cc1bc2acb9d0a37aecee1d693aa3215",
+      "instanceSha256": "c1677e649364a73899d2ea28767692377aa384c314d7a18ae6a3bab7621a878f"
+    },
+    {
+      "spreadsheetRow": 67,
+      "patternId": "cve/CVE-2020-35860",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35860.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35860/cve_2020_35860_patched.rs",
+      "id": "pair-993ff0a5b5bb8850",
+      "diagNames": [
+        "deref_null_pointer"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35860/cve_2020_35860_patched.stderr"
+      ],
+      "note": "",
+      "patternSha256": "72bbf49cbcf94ec7fb1a628531bb2ead8cc1bc2acb9d0a37aecee1d693aa3215",
+      "instanceSha256": "b9844d3ab1c9e6718567b2782e09220b942955db85b53733d483d4cc57256f26"
+    },
+    {
+      "spreadsheetRow": 68,
+      "patternId": "cve/CVE-2020-35862",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35862.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35862/cve_2020_35862.rs",
+      "id": "pair-1cb16e5daf384923",
+      "diagNames": [
+        "use_after_move"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35862/cve_2020_35862.stderr"
+      ],
+      "note": "",
+      "patternSha256": "2b580845b676a7304b05824f7da32d20018403eeff975e29ead939b48a94a5a0",
+      "instanceSha256": "6c30b0c4c1128ae44c5e19e633bf57ec160308360a16c758d064a7f0768c8987"
+    },
+    {
+      "spreadsheetRow": 69,
+      "patternId": "cve/CVE-2020-35873",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35873.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35873/cve_2020_35873.rs",
+      "id": "pair-751c56a195637e0e",
+      "diagNames": [
+        "use_after_drop"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35873/cve_2020_35873.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e24e6b1cfe4e957f87ff969fd09eeda3c4ac9ccb9f42a3bc8594d5298739b34a",
+      "instanceSha256": "4a5b88f2eb14abb677a6606f6436285f486c74abc488d3834cc80b89f4a224c9"
+    },
+    {
+      "spreadsheetRow": 70,
+      "patternId": "cve/CVE-2020-35873",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35873.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35873/cve_2020_35873_cross_stmt.rs",
+      "id": "pair-72c8bf8fefb305df",
+      "diagNames": [
+        "use_after_drop"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35873/cve_2020_35873_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e24e6b1cfe4e957f87ff969fd09eeda3c4ac9ccb9f42a3bc8594d5298739b34a",
+      "instanceSha256": "ae3d13b6b9ca360b6eef853bef5a8c533c8d1726a8df712f972119f3dd7d815f"
+    },
+    {
+      "spreadsheetRow": 71,
+      "patternId": "cve/CVE-2020-35873",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35873.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35873/cve_2020_35873_patched.rs",
+      "id": "pair-68200abd8212d5ca",
+      "diagNames": [
+        "use_after_drop"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "e24e6b1cfe4e957f87ff969fd09eeda3c4ac9ccb9f42a3bc8594d5298739b34a",
+      "instanceSha256": "6538e66c60199311b9e421a3998dd1effe9d7e7742322e96224f36229670a66b"
+    },
+    {
+      "spreadsheetRow": 74,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35877/cve_2020_35877.rs",
+      "id": "pair-896bacf6a5aa7121",
+      "diagNames": [
+        "deref_unchecked_ptr_offset",
+        "unchecked_pointer_offset"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35877/cve_2020_35877.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e95debc070ebeab25fe4fac7f55e6d4efacbf7e3bd5560eb87d2d55fc4d0436d",
+      "instanceSha256": "e68fd430af13b97083e144f623b0200fd6e5e498b6c7d858ad95712d9c72422a"
+    },
+    {
+      "spreadsheetRow": 75,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35877/minimal.rs",
+      "id": "pair-25a9b6caded1b19f",
+      "diagNames": [
+        "unchecked_pointer_offset"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35877/minimal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "e95debc070ebeab25fe4fac7f55e6d4efacbf7e3bd5560eb87d2d55fc4d0436d",
+      "instanceSha256": "5cf3c9d366d33943d8f167c4cbfebc99983fc605eb25fef8ebda3085a19f2e67"
+    },
+    {
+      "spreadsheetRow": 83,
+      "patternId": "cve/CVE-2020-35881",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35881.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35881/cve_2020_35881.rs",
+      "id": "pair-146e7202498cacff",
+      "diagNames": [
+        "wrong_assumption_of_fat_pointer_layout"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35881/cve_2020_35881.stderr"
+      ],
+      "note": "",
+      "patternSha256": "a1455f4a1f243691523eb3be74da5e6e3f0ad4ea3930d06250a7dcbc9d209bb6",
+      "instanceSha256": "16b83d6549a6240da8dab1ea3a59579054cbe6b8d3fdcc496c57add3993e75f6"
+    },
+    {
+      "spreadsheetRow": 84,
+      "patternId": "cve/CVE-2020-35881",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35881.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35881/cve_2020_35881_cross_fn.rs",
+      "id": "pair-c1216e5b4f48a87f",
+      "diagNames": [
+        "wrong_assumption_of_fat_pointer_layout"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35881/cve_2020_35881_cross_fn.stderr"
+      ],
+      "note": "",
+      "patternSha256": "a1455f4a1f243691523eb3be74da5e6e3f0ad4ea3930d06250a7dcbc9d209bb6",
+      "instanceSha256": "7eb2419c4830efc9b036cbe7d0fc4ba497a58d0f12b77f516791d770154abcc8"
+    },
+    {
+      "spreadsheetRow": 85,
+      "patternId": "cve/CVE-2020-35881",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35881.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35881/cve_2020_35881_cross_stmt.rs",
+      "id": "pair-8e33b38ca12533e2",
+      "diagNames": [
+        "wrong_assumption_of_fat_pointer_layout"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35881/cve_2020_35881_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "a1455f4a1f243691523eb3be74da5e6e3f0ad4ea3930d06250a7dcbc9d209bb6",
+      "instanceSha256": "b17780b31eb54828a20f2571b503ca9096dc7dc46186f4ac88bb5c6fdfddd6e8"
+    },
+    {
+      "spreadsheetRow": 86,
+      "patternId": "cve/CVE-2020-35881",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35881.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35881/cve_2020_35881_patched.rs",
+      "id": "pair-10d1b0c7a0cf4032",
+      "diagNames": [
+        "wrong_assumption_of_fat_pointer_layout"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "a1455f4a1f243691523eb3be74da5e6e3f0ad4ea3930d06250a7dcbc9d209bb6",
+      "instanceSha256": "09d23ae6877cd5555740f07ce7c5b14aaa685a78eebf129010ab7d7b8bd7442b"
+    },
+    {
+      "spreadsheetRow": 87,
+      "patternId": "cve/CVE-2020-35881",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35881.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35881_dyn_derive/dyn_derive.rs",
+      "id": "pair-f143680a221332d0",
+      "diagNames": [
+        "wrong_assumption_of_fat_pointer_layout"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35881_dyn_derive/dyn_derive.stderr"
+      ],
+      "note": "",
+      "patternSha256": "a1455f4a1f243691523eb3be74da5e6e3f0ad4ea3930d06250a7dcbc9d209bb6",
+      "instanceSha256": "a4a052e9f40908fec553cca4473e967f7a3e10b3885ff226f139f94fd74cc8af"
+    },
+    {
+      "spreadsheetRow": 92,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35887/cve_2020_35887.rs",
+      "id": "pair-bdeefdd3768bee58",
+      "diagNames": [
+        "unchecked_pointer_offset"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35887/cve_2020_35887.inline.stderr"
+      ],
+      "note": "",
+      "patternSha256": "739c053499241ceefe0f1cced2fcdc019f30c6db504b82edc1b157759feefb65",
+      "instanceSha256": "ffb241d6cf5c3589c90489301debb50a5e271f5dd64d3912acda42a3702ba307"
+    },
+    {
+      "spreadsheetRow": 93,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35887/cve_2020_35887_cross_fn.rs",
+      "id": "pair-657d5d96189d8dbd",
+      "diagNames": [
+        "unchecked_pointer_offset"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35887/cve_2020_35887_cross_fn.inline.stderr"
+      ],
+      "note": "",
+      "patternSha256": "739c053499241ceefe0f1cced2fcdc019f30c6db504b82edc1b157759feefb65",
+      "instanceSha256": "4ed7682158fadad67696542998abe5b1addbcbf042baa57657e45fe5dcb0c180"
+    },
+    {
+      "spreadsheetRow": 94,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35887/cve_2020_35887_cross_stmt.rs",
+      "id": "pair-e34c86e888ec5a36",
+      "diagNames": [
+        "unchecked_pointer_offset"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35887/cve_2020_35887_cross_stmt.inline.stderr"
+      ],
+      "note": "",
+      "patternSha256": "739c053499241ceefe0f1cced2fcdc019f30c6db504b82edc1b157759feefb65",
+      "instanceSha256": "81dd6f1259434c455d596a9e95b1cbeb18de6502db1d0e7c7e4b292f94476d25"
+    },
+    {
+      "spreadsheetRow": 95,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35887/cve_2020_35887_patched.rs",
+      "id": "pair-657efd333a19c206",
+      "diagNames": [
+        "unchecked_pointer_offset"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "739c053499241ceefe0f1cced2fcdc019f30c6db504b82edc1b157759feefb65",
+      "instanceSha256": "c24c453b9752d3495b992efb7a4dffb6018a44ead8ffe9a43688ed6862bc9bda"
+    },
+    {
+      "spreadsheetRow": 100,
+      "patternId": "cve/CVE-2020-35888",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35888.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35888/cve_2020_35888.rs",
+      "id": "pair-6421df2c00c0a979",
+      "diagNames": [
+        "drop_uninit_value"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35888/cve_2020_35888.stderr"
+      ],
+      "note": "",
+      "patternSha256": "847aaeb351cf654514db2f16ff85593c1c17161ce84befec05ed258ca1c5f07b",
+      "instanceSha256": "65ce6bcc8c050dcf9143efd19f0e4c29de5a0f59c83ea964fb8518abb7c6d710"
+    },
+    {
+      "spreadsheetRow": 101,
+      "patternId": "cve/CVE-2020-35888",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35888.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35888/cve_2020_35888_cross_stmt.rs",
+      "id": "pair-23ab7b79496b5b0a",
+      "diagNames": [
+        "drop_uninit_value"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35888/cve_2020_35888_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "847aaeb351cf654514db2f16ff85593c1c17161ce84befec05ed258ca1c5f07b",
+      "instanceSha256": "cec59b34b290fc1135438bde1bb1fa0f986cdc801cb5cd10148400d7b5dca65e"
+    },
+    {
+      "spreadsheetRow": 102,
+      "patternId": "cve/CVE-2020-35888",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35888.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35888/cve_2020_35888_patched.rs",
+      "id": "pair-aee6d08dde4363b6",
+      "diagNames": [
+        "drop_uninit_value"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "847aaeb351cf654514db2f16ff85593c1c17161ce84befec05ed258ca1c5f07b",
+      "instanceSha256": "f6ba429aacf80922c0ddb649d5def37a8729d1f1ac4c88d5c8b15fe2a85a5310"
+    },
+    {
+      "spreadsheetRow": 103,
+      "patternId": "cve/CVE-2020-35888",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35888.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35888/cve_2020_35888_simplified.rs",
+      "id": "pair-4521abfd35a95af5",
+      "diagNames": [
+        "drop_uninit_value"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35888/cve_2020_35888_simplified.stderr"
+      ],
+      "note": "",
+      "patternSha256": "847aaeb351cf654514db2f16ff85593c1c17161ce84befec05ed258ca1c5f07b",
+      "instanceSha256": "99176ae379a7404002280ca961f859b60d20010723efe092b91c823a457c9346"
+    },
+    {
+      "spreadsheetRow": 104,
+      "patternId": "cve/CVE-2020-35892-3",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35892-3.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3.rs",
+      "id": "pair-7d7d19c0052ab240",
+      "diagNames": [
+        "offset_by_one"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3.stderr"
+      ],
+      "note": "",
+      "patternSha256": "bac0848e98c1f6d69dc82e37524b866dbf04328e4642291af6d0c6b29602920f",
+      "instanceSha256": "5a72400ec4f9074b7400c908f27fc2d91385c8496399d6d0a5d72d844cd5f366"
+    },
+    {
+      "spreadsheetRow": 105,
+      "patternId": "cve/CVE-2020-35892-3",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35892-3.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_cross_stmt.rs",
+      "id": "pair-11a5bb58b5c0cc72",
+      "diagNames": [
+        "offset_by_one"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "bac0848e98c1f6d69dc82e37524b866dbf04328e4642291af6d0c6b29602920f",
+      "instanceSha256": "6000ac681fa4a89743a8b836c8edd2b94d82ba29534503c0cc79a69d26494965"
+    },
+    {
+      "spreadsheetRow": 106,
+      "patternId": "cve/CVE-2020-35892-3",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35892-3.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_patched.rs",
+      "id": "pair-c655c40d1139688f",
+      "diagNames": [
+        "offset_by_one"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_patched.stderr"
+      ],
+      "note": "",
+      "patternSha256": "bac0848e98c1f6d69dc82e37524b866dbf04328e4642291af6d0c6b29602920f",
+      "instanceSha256": "de903c1ff862945370b289e1ad6d6ebf15b37b06d77c2c478e1247f7f29dec3a"
+    },
+    {
+      "spreadsheetRow": 107,
+      "patternId": "cve/CVE-2020-35898-9",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35898-9.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35898_9/cve_2020_35898_9.rs",
+      "id": "pair-1408a5b1bbe4d999",
+      "diagNames": [
+        "get_mut_in_rc_unsafecell"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35898_9/cve_2020_35898_9.stderr"
+      ],
+      "note": "",
+      "patternSha256": "46370f6deb738a9cb762168b1584c020d7b894973c033cb3a7b61351e7e955a9",
+      "instanceSha256": "d2fc3d11f245f9870f43bff76a63e1bf22ede9503f9d453043b52e442819fc40"
+    },
+    {
+      "spreadsheetRow": 108,
+      "patternId": "cve/CVE-2020-35898-9",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35898-9.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35898_9/cve_2020_35898_9_cross_fn.rs",
+      "id": "pair-04b430cbd21c6e06",
+      "diagNames": [
+        "get_mut_in_rc_unsafecell"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35898_9/cve_2020_35898_9_cross_fn.stderr"
+      ],
+      "note": "",
+      "patternSha256": "46370f6deb738a9cb762168b1584c020d7b894973c033cb3a7b61351e7e955a9",
+      "instanceSha256": "b6e50fe176b206a6fd251158046a7f9347cb4550c6defcab5f995fffb3379eaa"
+    },
+    {
+      "spreadsheetRow": 109,
+      "patternId": "cve/CVE-2020-35898-9",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35898-9.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35898_9/cve_2020_35898_9_cross_stmt.rs",
+      "id": "pair-798c238ea099dc97",
+      "diagNames": [
+        "get_mut_in_rc_unsafecell"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35898_9/cve_2020_35898_9_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "46370f6deb738a9cb762168b1584c020d7b894973c033cb3a7b61351e7e955a9",
+      "instanceSha256": "6173211e55ea756787f2aca614b06d013b5c03742740209a306c4434fe961590"
+    },
+    {
+      "spreadsheetRow": 110,
+      "patternId": "cve/CVE-2020-35898-9",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35898-9.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35898_9/cve_2020_35898_9_patched.rs",
+      "id": "pair-8af771eedcabddf3",
+      "diagNames": [
+        "get_mut_in_rc_unsafecell"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "46370f6deb738a9cb762168b1584c020d7b894973c033cb3a7b61351e7e955a9",
+      "instanceSha256": "73c13ad9407ca0d9c826e5216476ec332329df9ef3cbd2ce85dec309676ddb87"
+    },
+    {
+      "spreadsheetRow": 111,
+      "patternId": "cve/CVE-2020-35901-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35901-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35901_2/cve_2020_35901.rs",
+      "id": "pair-08b56b2789e54415",
+      "diagNames": [
+        "unsound_pin_project"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35901_2/cve_2020_35901.stderr"
+      ],
+      "note": "",
+      "patternSha256": "8f41e76d84a5fea41a5e66b0c7e81e339e12cf18d23398ea70a96d47239f98cf",
+      "instanceSha256": "41d722b4ddcc2fecdbb199546c574e11a08aceffd193ac054d753634257793d9"
+    },
+    {
+      "spreadsheetRow": 112,
+      "patternId": "cve/CVE-2020-35901-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35901-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35901_2/cve_2020_35901_cross_fn.rs",
+      "id": "pair-b561d66b191cb6cf",
+      "diagNames": [
+        "unsound_pin_project"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35901_2/cve_2020_35901_cross_fn.stderr"
+      ],
+      "note": "",
+      "patternSha256": "8f41e76d84a5fea41a5e66b0c7e81e339e12cf18d23398ea70a96d47239f98cf",
+      "instanceSha256": "65a385e5519e67a0d991ec14f07d9004124c22504b5bfcbd616f847298bfaf3a"
+    },
+    {
+      "spreadsheetRow": 113,
+      "patternId": "cve/CVE-2020-35901-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35901-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35901_2/cve_2020_35901_cross_stmt.rs",
+      "id": "pair-8490ff5c7236073d",
+      "diagNames": [
+        "unsound_pin_project"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35901_2/cve_2020_35901_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "8f41e76d84a5fea41a5e66b0c7e81e339e12cf18d23398ea70a96d47239f98cf",
+      "instanceSha256": "b8661e4f55c3a2946bb9ebb5f31c4c7c557d729f275bc56757200462121df1ed"
+    },
+    {
+      "spreadsheetRow": 114,
+      "patternId": "cve/CVE-2020-35901-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35901-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35901_2/cve_2020_35901_patched.rs",
+      "id": "pair-1be29227106b8234",
+      "diagNames": [
+        "unsound_pin_project"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "8f41e76d84a5fea41a5e66b0c7e81e339e12cf18d23398ea70a96d47239f98cf",
+      "instanceSha256": "be8d44e5b37c85ef85597b8db2aa5aa592f99a941a8f85afe81e592a93169932"
+    },
+    {
+      "spreadsheetRow": 115,
+      "patternId": "cve/CVE-2020-35901-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35901-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35901_2/cve_2020_35902.rs",
+      "id": "pair-8e9c70c49a1fd32f",
+      "diagNames": [
+        "unsound_pin_project"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35901_2/cve_2020_35902.stderr"
+      ],
+      "note": "",
+      "patternSha256": "8f41e76d84a5fea41a5e66b0c7e81e339e12cf18d23398ea70a96d47239f98cf",
+      "instanceSha256": "3263c3c5bf8445f2ff9e64f92fa7730dec43ce68d086b28b294e4de1d705fda2"
+    },
+    {
+      "spreadsheetRow": 116,
+      "patternId": "cve/CVE-2020-35901-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35901-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35901_2/cve_2020_35902_cross_stmt.rs",
+      "id": "pair-7f9751359b32ef1b",
+      "diagNames": [
+        "unsound_pin_project"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35901_2/cve_2020_35902_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "8f41e76d84a5fea41a5e66b0c7e81e339e12cf18d23398ea70a96d47239f98cf",
+      "instanceSha256": "33eb453ea842d761411b703584ba3df104c3ce870a7b597362e75d9f3d67164d"
+    },
+    {
+      "spreadsheetRow": 117,
+      "patternId": "cve/CVE-2020-35901-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35901-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35901_2/cve_2020_35902_patched.rs",
+      "id": "pair-e798870c52990c01",
+      "diagNames": [
+        "unsound_pin_project"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "8f41e76d84a5fea41a5e66b0c7e81e339e12cf18d23398ea70a96d47239f98cf",
+      "instanceSha256": "f6276345d5b3da4078eb76f33e55fd2c8e03624cb4f82a025e8c7ce2c7f55078"
+    },
+    {
+      "spreadsheetRow": 118,
+      "patternId": "cve/CVE-2020-35907",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35907.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35907/cve_2020_35907.rs",
+      "id": "pair-5cfef2120ab60b54",
+      "diagNames": [
+        "thread_local_static_ref"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35907/cve_2020_35907.inline.stderr",
+        "tests/ui/cve/cve_2020_35907/cve_2020_35907.inline100.stderr",
+        "tests/ui/cve/cve_2020_35907/cve_2020_35907.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "db4e1b32c1fd24975c564fb1557486f63a9de9e371bd2293e1e3b6a91d6f8559",
+      "instanceSha256": "3da4b04c62c407e592a1e563a209c0dc96b4e3894a097a1c2155fc86ed325dc8"
+    },
+    {
+      "spreadsheetRow": 119,
+      "patternId": "cve/CVE-2020-35907",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35907.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35907/cve_2020_35907_patched.rs",
+      "id": "pair-27c6d5b539b73622",
+      "diagNames": [
+        "thread_local_static_ref"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "db4e1b32c1fd24975c564fb1557486f63a9de9e371bd2293e1e3b6a91d6f8559",
+      "instanceSha256": "c40bdbbd9bad9b05a282d01aec2b34da757c84e7fd65e9417cff089b9c81e115"
+    },
+    {
+      "spreadsheetRow": 120,
+      "patternId": "cve/CVE-2020-35916",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35916.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35916/minimal.rs",
+      "id": "pair-05fc38abf33c504e",
+      "diagNames": [
+        "mut_ref_from_const_ptr"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35916/minimal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "4a3895b2a36cf78616fbaea2e06b9c67515b59e773ca41e7d847591b0831c845",
+      "instanceSha256": "fb4cde5a4a20b8c8c6b6752e939c6e76a2c5c521f35b505b5e54087fcbe25ca5"
+    },
+    {
+      "spreadsheetRow": 121,
+      "patternId": "cve/CVE-2020-35916",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35916.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35916/minimal_cross_fn.rs",
+      "id": "pair-8b3c9b1cb441065e",
+      "diagNames": [
+        "mut_ref_from_const_ptr"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35916/minimal_cross_fn.stderr"
+      ],
+      "note": "",
+      "patternSha256": "4a3895b2a36cf78616fbaea2e06b9c67515b59e773ca41e7d847591b0831c845",
+      "instanceSha256": "0d3bf81a10255f8945bd8dcf0bed8c3027e3706b6a1da195a3bbff6b56f61f6c"
+    },
+    {
+      "spreadsheetRow": 122,
+      "patternId": "cve/CVE-2020-35916",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35916.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35916/minimal_cross_stmt.rs",
+      "id": "pair-c84566b666e5086d",
+      "diagNames": [
+        "mut_ref_from_const_ptr"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35916/minimal_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "4a3895b2a36cf78616fbaea2e06b9c67515b59e773ca41e7d847591b0831c845",
+      "instanceSha256": "84b2bf68dcb7ba50d93c0baa6652174f9b09e4f817d321b47356fecd2409ff25"
+    },
+    {
+      "spreadsheetRow": 123,
+      "patternId": "cve/CVE-2020-35916",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35916.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35916/minimal_patched.rs",
+      "id": "pair-071a7e62eb52b37f",
+      "diagNames": [
+        "mut_ref_from_const_ptr"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "4a3895b2a36cf78616fbaea2e06b9c67515b59e773ca41e7d847591b0831c845",
+      "instanceSha256": "dfa094cd7392d218622397ee8e8c35c6712a47e160aaed9a5d0f7b4b9e691c73"
+    },
+    {
+      "spreadsheetRow": 124,
+      "patternId": "cve/CVE-2020-35923",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35923.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35923/cve_2020_35923.rs",
+      "id": "pair-10fc85683a3d2d97",
+      "diagNames": [
+        "notnan_panic_safety",
+        "unreachable_unchecked_depend_on_option"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35923/cve_2020_35923.stderr"
+      ],
+      "note": "",
+      "patternSha256": "8227d41bb82727ea83dd5df8a6e7713250728bf8e4c9420fbc3f2e5132bb31f0",
+      "instanceSha256": "976e0771792f6a0f3096ac36a74c188c090a9309e58b732fb10ad384c1c2312b"
+    },
+    {
+      "spreadsheetRow": 125,
+      "patternId": "cve/CVE-2020-35923",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35923.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35923/cve_2020_35923_patched.rs",
+      "id": "pair-9ddad52722a28321",
+      "diagNames": [
+        "unreachable_unchecked_depend_on_option"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35923/cve_2020_35923_patched.stderr"
+      ],
+      "note": "",
+      "patternSha256": "8227d41bb82727ea83dd5df8a6e7713250728bf8e4c9420fbc3f2e5132bb31f0",
+      "instanceSha256": "85b141bc1d8ead96b2bcdeb724de050718a4e5c3cf2a7e7c3123b3cef28ea359"
+    },
+    {
+      "spreadsheetRow": 126,
+      "patternId": "cve/CVE-2021-25904",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-25904.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_25904/cve_2021_25904.rs",
+      "id": "pair-48f0869e85f0381f",
+      "diagNames": [
+        "unvalidated_slice_from_raw_parts"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_25904/cve_2021_25904.inline.stderr",
+        "tests/ui/cve/cve_2021_25904/cve_2021_25904.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "12fcd08ee2034ad2d6bd95e734b1d59c9f886a214b585cc02b35b63f9a10af51",
+      "instanceSha256": "0c891f433bd2b72e2f7b8367dccf05325aa0927d4a6036571d2ae35f970717b6"
+    },
+    {
+      "spreadsheetRow": 127,
+      "patternId": "cve/CVE-2021-25904",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-25904.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_25904/cve_2021_25904_src_only.rs",
+      "id": "pair-47a6f6a9831a6bd1",
+      "diagNames": [
+        "unvalidated_slice_from_raw_parts"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_25904/cve_2021_25904_src_only.inline.stderr",
+        "tests/ui/cve/cve_2021_25904/cve_2021_25904_src_only.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "12fcd08ee2034ad2d6bd95e734b1d59c9f886a214b585cc02b35b63f9a10af51",
+      "instanceSha256": "fc7e23ea2ef5657b20e863799f1f09475b5a41b80e140e07dd463771d943e319"
+    },
+    {
+      "spreadsheetRow": 128,
+      "patternId": "cve/CVE-2021-25905",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-25905.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_25905/greedy.rs",
+      "id": "pair-f5a9fb1740efe609",
+      "diagNames": [
+        "slice_from_raw_parts_uninitialized"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_25905/greedy.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "124ef6af6a58923323c826f5a2be046c7b691e88b8a9ef0d72b2c75b5eccb8bd",
+      "instanceSha256": "22046cf673f22d275fffc91d6450a5fd41b08836a0fe00642ecaedd6fa1fc817"
+    },
+    {
+      "spreadsheetRow": 129,
+      "patternId": "cve/CVE-2021-25905",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-25905.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_25905/greedy_patched.rs",
+      "id": "pair-72a66526f1f8166d",
+      "diagNames": [
+        "slice_from_raw_parts_uninitialized"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "124ef6af6a58923323c826f5a2be046c7b691e88b8a9ef0d72b2c75b5eccb8bd",
+      "instanceSha256": "310dde5ea1b0eb1adc8cd954103d843a37b0cdc6620b8aa261b77d1ea8618f3f"
+    },
+    {
+      "spreadsheetRow": 130,
+      "patternId": "cve/CVE-2021-25905",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-25905.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_25905/minimal.rs",
+      "id": "pair-937f313a4f323c74",
+      "diagNames": [
+        "slice_from_raw_parts_uninitialized"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_25905/minimal.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "124ef6af6a58923323c826f5a2be046c7b691e88b8a9ef0d72b2c75b5eccb8bd",
+      "instanceSha256": "97bc796bb735b30886ce528b962e7a3b2e850493248db14731046d3aa81918f0"
+    },
+    {
+      "spreadsheetRow": 132,
+      "patternId": "cve/CVE-2021-26307",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-26307.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_26307/minimal.rs",
+      "id": "pair-b8487e422e9af5c6",
+      "diagNames": [
+        "unchecked_cpuid"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_26307/minimal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "c420861c1b130b6321f091c1443a998a5570c699d1191f8c0865659997a5157c",
+      "instanceSha256": "7733538df133e20c42a838fd0afc58a3f20e3a397441a0f1b111a1c8e387f4c3"
+    },
+    {
+      "spreadsheetRow": 133,
+      "patternId": "cve/CVE-2021-26307",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-26307.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_26307/minimal_patched.rs",
+      "id": "pair-125bd749db49a2b8",
+      "diagNames": [
+        "unchecked_cpuid"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_26307/minimal_patched.stderr"
+      ],
+      "note": "",
+      "patternSha256": "c420861c1b130b6321f091c1443a998a5570c699d1191f8c0865659997a5157c",
+      "instanceSha256": "c171521b7f18d2aab419be33f5adb3eb9fcd8052360b5c203240099cb6993fdf"
+    },
+    {
+      "spreadsheetRow": 134,
+      "patternId": "cve/CVE-2021-27376",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-27376.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_27376/src/adjusted.rs",
+      "id": "pair-894f14d4967bafcf",
+      "diagNames": [
+        "wrong_assumption_of_layout_compatibility"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_27376/src/adjusted.inline.stderr",
+        "tests/ui/cve/cve_2021_27376/src/adjusted.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "9e7676d0b4bc3a9e5bf2d7e6ad98c7c6c27b5f3d51f430716f4fc3e8c2d1118b",
+      "instanceSha256": "24fd170289fc4159ade6456c4e655e159094a43b6de1d95ae272860f9199229b"
+    },
+    {
+      "spreadsheetRow": 135,
+      "patternId": "cve/CVE-2021-27376",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-27376.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_27376/src/lib.rs",
+      "id": "pair-b19d84b0333111e4",
+      "diagNames": [
+        "wrong_assumption_of_layout_compatibility"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_27376/src/lib.inline.stderr",
+        "tests/ui/cve/cve_2021_27376/src/lib.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "9e7676d0b4bc3a9e5bf2d7e6ad98c7c6c27b5f3d51f430716f4fc3e8c2d1118b",
+      "instanceSha256": "a4eaa3a6035a524a41e0e52550630cfb9e46f93942189b6636ea0cc223620765"
+    },
+    {
+      "spreadsheetRow": 136,
+      "patternId": "cve/CVE-2021-27376",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-27376.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_27376/src/minimal.rs",
+      "id": "pair-c217e2e1b4d552a7",
+      "diagNames": [
+        "wrong_assumption_of_layout_compatibility"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_27376/src/minimal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "9e7676d0b4bc3a9e5bf2d7e6ad98c7c6c27b5f3d51f430716f4fc3e8c2d1118b",
+      "instanceSha256": "db23193386f3d9dee48bdc17ac7b4c7aad0730916f0a9e7ed7a574d5bda8bfba"
+    },
+    {
+      "spreadsheetRow": 137,
+      "patternId": "cve/CVE-2021-27376",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-27376.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_27376/src/simplified.rs",
+      "id": "pair-7a0dd1b1133d1fe1",
+      "diagNames": [
+        "wrong_assumption_of_layout_compatibility"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_27376/src/simplified.inline.stderr",
+        "tests/ui/cve/cve_2021_27376/src/simplified.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "9e7676d0b4bc3a9e5bf2d7e6ad98c7c6c27b5f3d51f430716f4fc3e8c2d1118b",
+      "instanceSha256": "266aeca2c6a86a13187a118b1a4957686aaf1c759fffce00ce0c425284489d48"
+    },
+    {
+      "spreadsheetRow": 140,
+      "patternId": "cve/CVE-2021-29941-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-29941-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_29941_2/cve_2021_29941_2.rs",
+      "id": "pair-be33c2bab03cf22c",
+      "diagNames": [
+        "slice_from_raw_parts_uninitialized",
+        "trust_exact_size_iterator"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2021_29941_2/cve_2021_29941_2.inline.stderr",
+        "tests/ui/cve/cve_2021_29941_2/cve_2021_29941_2.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "5fbb960d5cdd0c2c8c3f8c33d51a09a2ece7ceee0d6c2a1cfe2278021321633a",
+      "instanceSha256": "0a6d5b3c1bb921331bd8223be7007b158fa7a601a0aa2ae130e3d0f088d6b827"
+    },
+    {
+      "spreadsheetRow": 141,
+      "patternId": "cve/CVE-2022-23639",
+      "patternFile": "docs/patterns-pest/cve/CVE-2022-23639.rpl",
+      "instanceFile": "tests/ui/cve/cve_2022_23639/cve_2022_23639.rs",
+      "id": "pair-2f3325368376bbfb",
+      "diagNames": [
+        "unsound_cast_between_u64_and_atomic_u64"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2022_23639/cve_2022_23639.stderr"
+      ],
+      "note": "",
+      "patternSha256": "031d5ac1ad559f8827044a39ccb6573de6aa6f3d0d4e66a0774f1a3ee36f8646",
+      "instanceSha256": "c5946eb67ee0913e32bc01f1a3a7a3ee82626789b8f4329902802b544fd74d15"
+    },
+    {
+      "spreadsheetRow": 142,
+      "patternId": "cve/CVE-2022-23639",
+      "patternFile": "docs/patterns-pest/cve/CVE-2022-23639.rpl",
+      "instanceFile": "tests/ui/cve/cve_2022_23639/cve_2022_23639_cross_stmt.rs",
+      "id": "pair-983e3c0e7020a41f",
+      "diagNames": [
+        "unsound_cast_between_u64_and_atomic_u64"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2022_23639/cve_2022_23639_cross_stmt.stderr"
+      ],
+      "note": "",
+      "patternSha256": "031d5ac1ad559f8827044a39ccb6573de6aa6f3d0d4e66a0774f1a3ee36f8646",
+      "instanceSha256": "987a31d603d9eb7f6de4434685429357dd33b1bce45a95b0f5693b547a0d9d0e"
+    },
+    {
+      "spreadsheetRow": 143,
+      "patternId": "cve/CVE-2022-23639",
+      "patternFile": "docs/patterns-pest/cve/CVE-2022-23639.rpl",
+      "instanceFile": "tests/ui/cve/cve_2022_23639/cve_2022_23639_patched.rs",
+      "id": "pair-11e27087eae7081f",
+      "diagNames": [
+        "unsound_cast_between_u64_and_atomic_u64"
+      ],
+      "type": "negative",
+      "expectedResult": "no_match",
+      "baselineFiles": [],
+      "note": "",
+      "patternSha256": "031d5ac1ad559f8827044a39ccb6573de6aa6f3d0d4e66a0774f1a3ee36f8646",
+      "instanceSha256": "7fb6e27228c6f539034801729d43f9b17d7d6ffda762b50a4f1fe42b92b460e9"
+    },
+    {
+      "spreadsheetRow": 144,
+      "patternId": "cve/CVE-2024-27284",
+      "patternFile": "docs/patterns-pest/cve/CVE-2024-27284.rpl",
+      "instanceFile": "tests/ui/cve/cve_2024_27284/cve_2024_27284.rs",
+      "id": "pair-090bd0398e6c1663",
+      "diagNames": [
+        "cassandra_iter_next_ptr_passed_to_cass_iter_get"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2024_27284/cve_2024_27284.stderr"
+      ],
+      "note": "",
+      "patternSha256": "5da1e984c6163855f93a2b9d5ccbe0f7f8e533b13bb85aee9752c49b4a8b01a9",
+      "instanceSha256": "4afbf98ae41036e91b952bd63b2b126bcb952e266eb3d65d2ffccd908ccd571e"
+    },
+    {
+      "spreadsheetRow": 145,
+      "patternId": "ub/allow-unchecked",
+      "patternFile": "docs/patterns-pest/ub/allow-unchecked.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35887/minimal.rs",
+      "id": "pair-c6da6ad542412dc6",
+      "diagNames": [
+        "alloc_maybe_zero",
+        "misaligned_pointer"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2020_35887/minimal.regular.stderr"
+      ],
+      "note": "",
+      "patternSha256": "541e3e743b258996927713c64e7eec0464e8821ad53026fba3a70a133106d697",
+      "instanceSha256": "66e3a2d619394202ac08522fbbac14d263edce075a4cd8878cae7a54c08bebfa"
+    },
+    {
+      "spreadsheetRow": 146,
+      "patternId": "ub/allow-unchecked",
+      "patternFile": "docs/patterns-pest/ub/allow-unchecked.rpl",
+      "instanceFile": "tests/ui/cve/cve_2025_48755/cve_2025_48755.rs",
+      "id": "pair-87f61a97a48073d7",
+      "diagNames": [
+        "alloc_maybe_zero"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2025_48755/cve_2025_48755.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "541e3e743b258996927713c64e7eec0464e8821ad53026fba3a70a133106d697",
+      "instanceSha256": "49444830727258fff138123d8de2ecffdbc089ac6f18b752d71ee32262b140b6"
+    },
+    {
+      "spreadsheetRow": 147,
+      "patternId": "ub/allow-unchecked",
+      "patternFile": "docs/patterns-pest/ub/allow-unchecked.rpl",
+      "instanceFile": "tests/ui/cve/cve_2025_48755/minimal.rs",
+      "id": "pair-28fa880694e48d83",
+      "diagNames": [
+        "alloc_maybe_zero"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/cve/cve_2025_48755/minimal.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "541e3e743b258996927713c64e7eec0464e8821ad53026fba3a70a133106d697",
+      "instanceSha256": "1170d9028e0e38224f30cbe97a54abde6bd1bd383d8ec89bb4d48d8075078940"
+    },
+    {
+      "spreadsheetRow": 148,
+      "patternId": "ub/allow-unchecked",
+      "patternFile": "docs/patterns-pest/ub/allow-unchecked.rpl",
+      "instanceFile": "tests/ui/ub/std/alloc/alloc.rs",
+      "id": "pair-b5949bcbcc611db6",
+      "diagNames": [
+        "unchecked_allocated_pointer"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/ub/std/alloc/alloc.stderr"
+      ],
+      "note": "",
+      "patternSha256": "541e3e743b258996927713c64e7eec0464e8821ad53026fba3a70a133106d697",
+      "instanceSha256": "8f4bcdfc5dbf76afb23209c641e2eb22199818b18bd0392282920b3cdb892640"
+    },
+    {
+      "spreadsheetRow": 149,
+      "patternId": "ub/allow-unchecked",
+      "patternFile": "docs/patterns-pest/ub/allow-unchecked.rpl",
+      "instanceFile": "tests/ui/ub/std/alloc/realloc.rs",
+      "id": "pair-e1d3a746fd2c82c2",
+      "diagNames": [
+        "use_after_realloc"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/ub/std/alloc/realloc.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "541e3e743b258996927713c64e7eec0464e8821ad53026fba3a70a133106d697",
+      "instanceSha256": "0e8ad587bc61c7f615380fca6fcc0c042bf2be61cb0dc05407bd89f376d7e24b"
+    },
+    {
+      "spreadsheetRow": 150,
+      "patternId": "ub/manually-drop",
+      "patternFile": "docs/patterns-pest/ub/manually-drop.rpl",
+      "instanceFile": "tests/ui/ub/std/mem/ManuallyDrop/ub.rs",
+      "id": "pair-08d1f46d0a7fd9b1",
+      "diagNames": [
+        "bad_manually_drop_operation_sequence"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/ub/std/mem/ManuallyDrop/ub.normal.stderr"
+      ],
+      "note": "",
+      "patternSha256": "31a1846de86b57c4a29585b07f2b8785845b5b824f48cd86ab111f0b4a4d4e12",
+      "instanceSha256": "806ef76317f9c5be58b4a2c0c5ae1f8bba076efebd2d05c045119d00e6610efb"
+    },
+    {
+      "spreadsheetRow": 151,
+      "patternId": "ub/transmute-int-to-ptr",
+      "patternFile": "docs/patterns-pest/ub/transmute-int-to-ptr.rpl",
+      "instanceFile": "tests/ui/ub/std/mem/transmute/int2ptr.rs",
+      "id": "pair-34916f297a0ee273",
+      "diagNames": [
+        "transmuting_int_to_ptr"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/ub/std/mem/transmute/int2ptr.stderr"
+      ],
+      "note": "",
+      "patternSha256": "db827087f64bd181fa3d8dfa4420249e63691f7ccbfa21dc972508f0f7904634",
+      "instanceSha256": "18930bb17548505b196d1f8ce3c5f35cbb6c346280c0ec8fd6f2b5d475f255e3"
+    },
+    {
+      "spreadsheetRow": 152,
+      "patternId": "ub/transmute-to-bool",
+      "patternFile": "docs/patterns-pest/ub/transmute-to-bool.rpl",
+      "instanceFile": "tests/ui/ub/std/mem/transmute/invalid_bool_value.rs",
+      "id": "pair-922bec4dce842904",
+      "diagNames": [
+        "transmuting_type_to_bool"
+      ],
+      "type": "positive",
+      "expectedResult": "match",
+      "baselineFiles": [
+        "tests/ui/ub/std/mem/transmute/invalid_bool_value.stderr"
+      ],
+      "note": "",
+      "patternSha256": "db3a7b5a45228ed84ecdffbf59c3afaa56a264152554d126dab049078c406254",
+      "instanceSha256": "13e88468dc8010dd69637ba8ccd30295e3d1bc5f4ecbf7f2bfbe9cf475f5be56"
+    }
+  ],
+  "excludedPairs": [
+    {
+      "spreadsheetRow": 10,
+      "patternId": "clippy/mut-from-ref",
+      "patternFile": "docs/patterns-pest/clippy/mut-from-ref.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35862/cve_2020_35862.rs"
+    },
+    {
+      "spreadsheetRow": 13,
+      "patternId": "clippy/ptr-offset-with-cast",
+      "patternFile": "docs/patterns-pest/clippy/ptr-offset-with-cast.rpl",
+      "instanceFile": "tests/ui/clippy/size_of_in_element_count/functions.rs"
+    },
+    {
+      "spreadsheetRow": 14,
+      "patternId": "clippy/ptr-offset-with-cast",
+      "patternFile": "docs/patterns-pest/clippy/ptr-offset-with-cast.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3.rs"
+    },
+    {
+      "spreadsheetRow": 15,
+      "patternId": "clippy/ptr-offset-with-cast",
+      "patternFile": "docs/patterns-pest/clippy/ptr-offset-with-cast.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_cross_fn.rs"
+    },
+    {
+      "spreadsheetRow": 16,
+      "patternId": "clippy/ptr-offset-with-cast",
+      "patternFile": "docs/patterns-pest/clippy/ptr-offset-with-cast.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_cross_stmt.rs"
+    },
+    {
+      "spreadsheetRow": 17,
+      "patternId": "clippy/ptr-offset-with-cast",
+      "patternFile": "docs/patterns-pest/clippy/ptr-offset-with-cast.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_patched.rs"
+    },
+    {
+      "spreadsheetRow": 18,
+      "patternId": "clippy/ptr-offset-with-cast",
+      "patternFile": "docs/patterns-pest/clippy/ptr-offset-with-cast.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_25905/minimal.rs"
+    },
+    {
+      "spreadsheetRow": 20,
+      "patternId": "clippy/size-of-in-element-count",
+      "patternFile": "docs/patterns-pest/clippy/size-of-in-element-count.rpl",
+      "instanceFile": "tests/ui/clippy/size_of_in_element_count/functions.rs"
+    },
+    {
+      "spreadsheetRow": 23,
+      "patternId": "clippy/transmute-int-to-non-zero",
+      "patternFile": "docs/patterns-pest/clippy/transmute-int-to-non-zero.rpl",
+      "instanceFile": "tests/ui/clippy/eager_transmute.rs"
+    },
+    {
+      "spreadsheetRow": 29,
+      "patternId": "clippy/uninit-vec",
+      "patternFile": "docs/patterns-pest/clippy/uninit-vec.rpl",
+      "instanceFile": "tests/ui/cve/cve_2018_20992/cve_2018_20992.rs"
+    },
+    {
+      "spreadsheetRow": 30,
+      "patternId": "clippy/uninit-vec",
+      "patternFile": "docs/patterns-pest/clippy/uninit-vec.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_16138/simplified.rs"
+    },
+    {
+      "spreadsheetRow": 31,
+      "patternId": "clippy/uninit-vec",
+      "patternFile": "docs/patterns-pest/clippy/uninit-vec.rpl",
+      "instanceFile": "tests/ui/cve/cve_2019_16138/src/lib.rs"
+    },
+    {
+      "spreadsheetRow": 32,
+      "patternId": "clippy/uninit-vec",
+      "patternFile": "docs/patterns-pest/clippy/uninit-vec.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_29941_2/cve_2021_29941_2.rs"
+    },
+    {
+      "spreadsheetRow": 33,
+      "patternId": "clippy/uninit-vec",
+      "patternFile": "docs/patterns-pest/clippy/uninit-vec.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_45688/cve_2021_45688.rs"
+    },
+    {
+      "spreadsheetRow": 34,
+      "patternId": "clippy/uninit-vec",
+      "patternFile": "docs/patterns-pest/clippy/uninit-vec.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_45688/cve_2021_45688_cross_fn.rs"
+    },
+    {
+      "spreadsheetRow": 35,
+      "patternId": "clippy/uninit-vec",
+      "patternFile": "docs/patterns-pest/clippy/uninit-vec.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_45688/cve_2021_45688_cross_stmt.rs"
+    },
+    {
+      "spreadsheetRow": 54,
+      "patternId": "cve/CVE-2019-16138",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-16138.rpl",
+      "instanceFile": "tests/ui/clippy/uninit_vec.rs"
+    },
+    {
+      "spreadsheetRow": 58,
+      "patternId": "cve/CVE-2019-16138",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-16138.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_29941_2/cve_2021_29941_2.rs"
+    },
+    {
+      "spreadsheetRow": 59,
+      "patternId": "cve/CVE-2019-16138",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-16138.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_45688/cve_2021_45688.rs"
+    },
+    {
+      "spreadsheetRow": 60,
+      "patternId": "cve/CVE-2019-16138",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-16138.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_45688/cve_2021_45688_cross_fn.rs"
+    },
+    {
+      "spreadsheetRow": 61,
+      "patternId": "cve/CVE-2019-16138",
+      "patternFile": "docs/patterns-pest/cve/CVE-2019-16138.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_45688/cve_2021_45688_cross_stmt.rs"
+    },
+    {
+      "spreadsheetRow": 72,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/clippy/ptr_offset_with_cast.rs"
+    },
+    {
+      "spreadsheetRow": 73,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/clippy/zst_offset.rs"
+    },
+    {
+      "spreadsheetRow": 76,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35887/cve_2020_35887.rs"
+    },
+    {
+      "spreadsheetRow": 77,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35887/cve_2020_35887_cross_fn.rs"
+    },
+    {
+      "spreadsheetRow": 78,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35887/cve_2020_35887_cross_stmt.rs"
+    },
+    {
+      "spreadsheetRow": 79,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3.rs"
+    },
+    {
+      "spreadsheetRow": 80,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_cross_fn.rs"
+    },
+    {
+      "spreadsheetRow": 81,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_cross_stmt.rs"
+    },
+    {
+      "spreadsheetRow": 82,
+      "patternId": "cve/CVE-2020-35877",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35877.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_patched.rs"
+    },
+    {
+      "spreadsheetRow": 88,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/clippy/ptr_offset_with_cast.rs"
+    },
+    {
+      "spreadsheetRow": 89,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/clippy/zst_offset.rs"
+    },
+    {
+      "spreadsheetRow": 90,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35877/cve_2020_35877.rs"
+    },
+    {
+      "spreadsheetRow": 91,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35877/minimal.rs"
+    },
+    {
+      "spreadsheetRow": 96,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3.rs"
+    },
+    {
+      "spreadsheetRow": 97,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_cross_fn.rs"
+    },
+    {
+      "spreadsheetRow": 98,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_cross_stmt.rs"
+    },
+    {
+      "spreadsheetRow": 99,
+      "patternId": "cve/CVE-2020-35887",
+      "patternFile": "docs/patterns-pest/cve/CVE-2020-35887.rpl",
+      "instanceFile": "tests/ui/cve/cve_2020_35892_3/cve_2020_35892_3_patched.rs"
+    },
+    {
+      "spreadsheetRow": 131,
+      "patternId": "cve/CVE-2021-25905",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-25905.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_29941_2/cve_2021_29941_2.rs"
+    },
+    {
+      "spreadsheetRow": 138,
+      "patternId": "cve/CVE-2021-29941-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-29941-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_25905/greedy.rs"
+    },
+    {
+      "spreadsheetRow": 139,
+      "patternId": "cve/CVE-2021-29941-2",
+      "patternFile": "docs/patterns-pest/cve/CVE-2021-29941-2.rpl",
+      "instanceFile": "tests/ui/cve/cve_2021_25905/minimal.rs"
+    }
+  ],
+  "missingBaselines": []
+}

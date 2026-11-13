@@ -1,0 +1,26 @@
+# 本地需求、Excel 原件和调研资料
+/rhx/
+
+# 依赖和可重新生成的产物
+/node_modules/
+/dist/
+/public/generated/
+
+# 浏览器验收输出
+/playwright-report/
+/test-results/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# 系统临时文件与日志
+.DS_Store
+Thumbs.db
+*.log
+
+# 本地环境配置；保留可共享的示例
+.env
+.env.*
+!.env.example
+!.env.*.example

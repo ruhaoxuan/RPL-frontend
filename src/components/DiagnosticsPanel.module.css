@@ -1,0 +1,244 @@
+.panel {
+  margin: 27px 0;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.heading h2 {
+  margin: 0;
+  font-size: 16px;
+}
+.heading h2 span {
+  font-size: 11px;
+  font-weight: 400;
+  color: #8893a2;
+  margin-left: 8px;
+}
+.heading > small {
+  font-size: 10px;
+  color: #8893a2;
+}
+.intro {
+  color: #7f8b9b;
+  font-size: 11px;
+  line-height: 1.9;
+  margin: 9px 0 17px;
+}
+.group {
+  background: #fff;
+  border: 1px solid #e2e6ed;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.group summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 20px;
+  cursor: pointer;
+  list-style: none;
+}
+.group summary::-webkit-details-marker {
+  display: none;
+}
+.group summary:hover {
+  background: #fafbfc;
+}
+.group summary:focus-visible {
+  outline: 3px solid #d99970;
+  outline-offset: -3px;
+}
+.groupTitle {
+  font-family: Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.groupTitle small {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #7d8999;
+  margin-top: 5px;
+}
+.level {
+  font-family: monospace;
+  white-space: nowrap;
+  font-size: 10px;
+  background: #f3f4f7;
+  border-radius: 4px;
+  padding: 2px 7px;
+  color: #66758a;
+}
+.toggle {
+  font-size: 9px;
+  color: #a06a51;
+  white-space: nowrap;
+}
+.body {
+  border-top: 1px solid #e9edf2;
+  padding: 20px;
+}
+.meta {
+  display: flex;
+  gap: 12px 22px;
+  flex-wrap: wrap;
+  font-size: 10px;
+  color: #8590a0;
+}
+.meta code {
+  color: #46586f;
+  margin-left: 6px;
+}
+.meta button {
+  color: #9d6247;
+  margin-left: auto;
+}
+.rules {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 18px 0;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #edf0f4;
+  color: #8a96a6;
+  font-size: 10px;
+}
+.rules > b {
+  font-weight: 500;
+  margin-right: 5px;
+}
+.rules button {
+  background: #f4f6f9;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #63768c;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.rules small {
+  margin-left: 6px;
+  color: #9aa5b2;
+}
+.field {
+  margin: 19px 0 0;
+}
+.field h3 {
+  font-size: 11px;
+  font-weight: 600;
+  color: #68788c;
+  margin: 0 0 8px;
+}
+.message {
+  border-left: 2px solid #e5e9f0;
+  padding: 1px 0 1px 12px;
+  margin: 0 0 12px;
+}
+.message p,
+.field > p {
+  font-size: 12px;
+  color: #44536a;
+  line-height: 1.9;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.arguments {
+  font-size: 10px;
+  margin-top: 7px;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  color: #94a0ad;
+}
+.arguments code {
+  color: #627b91;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.lineLink {
+  font-size: 9px;
+  color: #9c7561;
+  display: inline-block;
+  margin-top: 5px;
+}
+@media (max-width: 600px) {
+  .heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .group summary {
+    padding: 14px 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .groupTitle {
+    flex-basis: 100%;
+  }
+  .groupTitle small {
+    font-size: 10px;
+  }
+  .body {
+    padding: 15px 12px;
+  }
+  .meta {
+    flex-direction: column;
+    gap: 7px;
+    overflow-wrap: anywhere;
+  }
+  .meta button {
+    margin-left: 0;
+  }
+  .arguments {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .toggle {
+    margin-left: auto;
+  }
+  .message p {
+    font-size: 11px;
+  }
+  .rules button {
+    font-size: 9px;
+  }
+}
+
+.meta button,
+.rules button,
+.lineLink {
+  cursor: pointer;
+  font: inherit;
+}
+.meta button,
+.lineLink {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 3px;
+}
+.rules button {
+  border: 0;
+  text-align: left;
+  justify-content: flex-start;
+}
+.lineLink {
+  font-size: 9px !important;
+  color: #9c7561 !important;
+}
+.meta button {
+  font-size: 10px;
+}
+.rules button:hover {
+  background: #e9eef5;
+}
