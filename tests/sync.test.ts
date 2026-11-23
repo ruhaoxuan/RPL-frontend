@@ -66,7 +66,25 @@ test(
         path.join(fixture, "package.json"),
       );
       await mkdir(path.join(fixture, "vendor"));
-      git("clone", "--shared", path.join(root, "vendor/RPL"), "vendor/RPL");
+      // CI checks submodules out at a detached commit and need not create master.
+      // Create our own advertised master in a disposable origin; never rely on
+      // local branches in the developer/CI source checkout.
+      const seed = path.join(fixture, "detached-source");
+      git("clone", "--shared", path.join(root, "vendor/RPL"), seed);
+      git("-C", seed, "checkout", "--detach", "HEAD");
+      const seedBranches = git(
+        "-C",
+        seed,
+        "for-each-ref",
+        "--format=%(refname:short)",
+        "refs/heads",
+      ).trim();
+      for (const branch of seedBranches.split("\n").filter(Boolean))
+        git("-C", seed, "branch", "-D", branch);
+      const origin = path.join(fixture, "origin");
+      git("clone", "--shared", seed, origin);
+      git("-C", origin, "checkout", "-B", "master", "HEAD");
+      git("clone", "--shared", origin, "vendor/RPL");
       const initialRecords = await json("metadata/data-sources.json");
       initialRecords.sources[0].updateCheck.status = "update_available";
       initialRecords.sources[0].updateCheck.latestVersion = "f".repeat(40);
