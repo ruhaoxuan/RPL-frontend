@@ -14,7 +14,9 @@
     "preview": "vite preview --host 127.0.0.1",
     "format": "prettier --write src scripts metadata tests *.ts *.json index.html README.md",
     "data:import": "python3 scripts/import_allowlist.py",
-    "data:table": "tsx scripts/mapping-table.ts"
+    "data:table": "tsx scripts/mapping-table.ts",
+    "data:sync": "tsx scripts/sync-data.ts",
+    "data:updates": "tsx scripts/check-updates.ts"
   },
   "dependencies": {
     "lucide-react": "^0.577.0",

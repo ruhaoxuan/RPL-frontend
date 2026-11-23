@@ -17,6 +17,16 @@ try {
   await page.goto(base);
   await expect(page.getByRole("heading", { name: "RPL Atlas" })).toBeVisible();
   await expect(page.locator("article")).toHaveCount(20);
+  await expect(page.getByLabel("数据同步摘要")).toContainText("数据最近同步");
+  await page.getByRole("link", { name: "查看数据源 →" }).click();
+  const syncSection = page.getByRole("region", { name: "数据源与同步状态" });
+  await expect(syncSection).toBeVisible();
+  await expect(syncSection).toContainText(
+    "不是文件修改、普通构建或站点发布时间",
+  );
+  await expect(syncSection).toBeInViewport();
+  await page.goto(base);
+  await expect(page.locator("article")).toHaveCount(20);
   await expect(
     page.getByRole("heading", { name: "模式来源分布 Source composition" }),
   ).toBeVisible();
@@ -294,6 +304,295 @@ try {
     );
   }
   expect(errors).toEqual([]);
+  const statusPage = await context.newPage();
+  statusPage.on("pageerror", (e) => errors.push(e.message));
+  const checked = "2026-11-23T02:30:00Z";
+  const failedSource = {
+    ...data.dataSources[0],
+    lastSyncAttemptAt: checked,
+    lastSyncedAt: "2026-11-23T01:00:00Z",
+    version: data.manifest.sourceCommit,
+    lastAttemptStatus: "failed",
+    lastError: "拉取失败（测试）",
+  };
+  const latestSource = {
+    ...failedSource,
+    id: "example",
+    name: "示例来源",
+    url: "https://example.com/repo",
+    lastSyncedAt: checked,
+    lastAttemptStatus: "success",
+    lastError: null,
+  };
+  await statusPage.route("**/generated/catalog.json", (r) =>
+    r.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({
+        ...data,
+        dataSources: [failedSource, latestSource],
+      }),
+    }),
+  );
+  await statusPage.route("**/api/data-sources**", (r) =>
+    r.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({
+        busy: false,
+        sources: [failedSource, latestSource].map((s) => ({
+          id: s.id,
+          supported: s.id === "rpl",
+          checkSupported: s.id === "rpl",
+          record: s,
+          job: null,
+        })),
+      }),
+    }),
+  );
+  await statusPage.goto(base);
+  await expect(statusPage.getByLabel("数据同步摘要")).toContainText(
+    "最近一次成功同步",
+  );
+  await expect(statusPage.getByLabel("数据同步摘要")).toContainText("示例来源");
+  await expect(statusPage.getByLabel("数据同步摘要")).toContainText(
+    "最近同步失败",
+  );
+  await statusPage.getByRole("link", { name: "查看数据源 →" }).click();
+  await statusPage.getByText("失败详情", { exact: true }).click();
+  await expect(
+    statusPage.getByText("当前仍展示上次成功同步的数据。", { exact: true }),
+  ).toBeVisible();
+  await expect(
+    statusPage.getByText("拉取失败（测试）", { exact: true }),
+  ).toBeVisible();
+  await statusPage.close();
+  // Exercise manual sync without touching the real RPL remote or checkout.
+  for (const outcome of ["success", "failed"] as const) {
+    const manual = await context.newPage();
+    manual.on("pageerror", (e) => errors.push(e.message));
+    let started = false,
+      finished = false;
+    const job = {
+      id: `test-${outcome}`,
+      sourceId: "rpl",
+      status: "running",
+      message: "正在拉取并校验数据…",
+    };
+    await manual.route("**/api/data-sources**", async (route) => {
+      if (route.request().method() === "POST") {
+        expect(route.request().headers()["x-rpl-sync"]).toBe("1");
+        expect(new URL(route.request().url()).pathname).toMatch(/\/rpl\/sync$/);
+        started = true;
+        return route.fulfill({
+          status: 202,
+          contentType: "application/json",
+          body: JSON.stringify(job),
+        });
+      }
+      if (started) {
+        finished = true;
+        job.status = outcome;
+        job.message =
+          outcome === "success"
+            ? "同步完成，已刷新展示数据。"
+            : "同步失败，原有数据和成功时间已保留；请查看失败详情。";
+      }
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          busy: false,
+          sources: [{ id: "rpl", supported: true, job: started ? job : null }],
+        }),
+      });
+    });
+    await manual.route("**/generated/catalog.json", (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          ...data,
+          dataSources: [
+            {
+              ...failedSource,
+              updateCheck: {
+                ...failedSource.updateCheck,
+                status: !finished
+                  ? "update_available"
+                  : outcome === "success"
+                    ? "current"
+                    : "failed",
+                lastCheckedAt: finished
+                  ? checked
+                  : failedSource.updateCheck.lastCheckedAt,
+                error:
+                  finished && outcome === "failed"
+                    ? "获取远端版本失败（测试）"
+                    : null,
+              },
+              lastAttemptStatus: finished ? outcome : "success",
+              lastError:
+                outcome === "failed" && finished ? "手动同步测试失败" : null,
+            },
+          ],
+        }),
+      }),
+    );
+    await manual.goto(`${base}/#/about`);
+    const button = manual.getByRole("button", { name: "手动同步 RPL" });
+    await expect(button).toBeEnabled();
+    await expect(manual.getByText("发现更新", { exact: true })).toBeVisible();
+    await button.click();
+    await expect(button).toHaveText("同步中…");
+    await expect(button).toBeDisabled();
+    await expect(manual.getByRole("status")).toContainText(
+      outcome === "success" ? "同步完成" : "同步失败",
+    );
+    await expect(button).toBeEnabled();
+    await expect(
+      manual.getByText(outcome === "success" ? "已是最新" : "检查失败", {
+        exact: true,
+      }),
+    ).toBeVisible();
+    if (outcome === "failed") {
+      await manual.getByText("失败详情", { exact: true }).click();
+      await expect(
+        manual.getByText("手动同步测试失败", { exact: true }),
+      ).toBeVisible();
+    }
+    await manual.close();
+  }
+  const checkPage = await context.newPage();
+  checkPage.on("pageerror", (e) => errors.push(e.message));
+  let checking = false;
+  const checkRecord = {
+    ...data.dataSources[0],
+    updateCheck: {
+      ...data.dataSources[0].updateCheck,
+      enabled: true,
+      intervalMinutes: 1,
+      status: "never",
+      lastCheckedAt: null,
+    },
+  };
+  const checkJob = {
+    id: "check-test",
+    sourceId: "rpl",
+    kind: "check",
+    status: "running",
+    message: "正在检查更新…",
+  };
+  await checkPage.route("**/api/data-sources**", async (route) => {
+    if (checking) {
+      checkJob.status = "success";
+      checkJob.message = "检查完成，已更新检查结果。";
+      checkRecord.updateCheck.status = "update_available";
+      checkRecord.updateCheck.lastCheckedAt = checked;
+      checkRecord.updateCheck.comparedVersion = data.manifest.sourceCommit;
+      checkRecord.updateCheck.latestVersion = "f".repeat(40);
+    }
+    return route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({
+        busy: false,
+        sources: [
+          {
+            id: "rpl",
+            supported: true,
+            checkSupported: true,
+            record: checkRecord,
+            job: checking ? checkJob : null,
+          },
+        ],
+      }),
+    });
+  });
+  await checkPage.goto(`${base}/#/about`);
+  await expect(
+    checkPage.getByRole("button", { name: "检查更新 RPL" }),
+  ).toHaveCount(0);
+  checking = true;
+  await expect(checkPage.getByText("发现更新", { exact: true })).toBeVisible();
+  await expect(checkPage.getByText(/尚未同步或收录/)).toBeVisible();
+  await expect(
+    checkPage.getByRole("button", { name: "手动同步 RPL" }),
+  ).toBeEnabled();
+  expect(checkRecord.lastSyncedAt).toBe(data.dataSources[0].lastSyncedAt);
+  await checkPage.close();
+  // Invalid live-state payloads must not crash an otherwise valid catalog page.
+  const malformed = await context.newPage();
+  malformed.on("pageerror", (e) => errors.push(e.message));
+  await malformed.route("**/api/data-sources**", (r) =>
+    r.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({
+        busy: false,
+        sources: [{ id: "rpl", supported: true, record: {}, job: null }],
+      }),
+    }),
+  );
+  await malformed.goto(`${base}/#/about`);
+  await expect(
+    malformed.getByRole("heading", { name: "数据说明", exact: true }),
+  ).toBeVisible();
+  await expect(
+    malformed.getByRole("button", { name: "手动同步 RPL" }),
+  ).toBeDisabled();
+  await malformed.close();
+  // A failed background catalog refresh must retain the loaded page and allow retry.
+  const refreshPage = await context.newPage();
+  refreshPage.on("pageerror", (e) => errors.push(e.message));
+  await refreshPage.goto(base);
+  await expect(refreshPage.locator("article")).toHaveCount(20);
+  await refreshPage.route("**/generated/catalog.json", (r) =>
+    r.fulfill({ status: 503, body: "unavailable" }),
+  );
+  await refreshPage.evaluate(() =>
+    window.dispatchEvent(new Event("rpl:catalog-refresh")),
+  );
+  await expect(refreshPage.getByRole("alert")).toContainText("数据刷新失败");
+  await expect(refreshPage.locator("article")).toHaveCount(20);
+  await refreshPage.unroute("**/generated/catalog.json");
+  await refreshPage.getByRole("button", { name: "重试刷新" }).click();
+  await expect(refreshPage.getByRole("alert")).toHaveCount(0);
+  await expect(refreshPage.locator("article")).toHaveCount(20);
+  await refreshPage.close();
+  const readonlyPage = await context.newPage();
+  await readonlyPage.route("**/api/data-sources**", (r) =>
+    r.fulfill({ status: 404, body: "not found" }),
+  );
+  await readonlyPage.goto(`${base}/#/about`);
+  await expect(
+    readonlyPage.getByRole("button", { name: "手动同步 RPL" }),
+  ).toBeDisabled();
+  await expect(
+    readonlyPage.getByText(/手动同步需要本地同步服务/),
+  ).toBeVisible();
+  await readonlyPage.close();
+  // Real local endpoint checks must never create an RPL job in the working repo.
+  expect((await context.request.get(`${base}/api/data-sources`)).ok()).toBe(
+    true,
+  );
+  expect(
+    (
+      await context.request.post(`${base}/api/data-sources/missing/sync`, {
+        headers: { "X-RPL-Sync": "1" },
+      })
+    ).status(),
+  ).toBe(404);
+  expect(
+    (await context.request.post(`${base}/api/data-sources/rpl/sync`)).status(),
+  ).toBe(403);
+  expect(
+    (
+      await context.request.post(`${base}/api/data-sources/rpl/sync`, {
+        headers: { "X-RPL-Sync": "1", Origin: "https://example.com" },
+      })
+    ).status(),
+  ).toBe(403);
   const errorPage = await context.newPage();
   await errorPage.route("**/generated/catalog.json", (r) =>
     r.fulfill({ status: 503, body: "unavailable" }),

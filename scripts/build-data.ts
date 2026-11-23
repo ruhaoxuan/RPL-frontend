@@ -1,3 +1,4 @@
+import { dataSourcesSchema } from "../src/domain/dataSources";
 import { readFile, writeFile, mkdir, readdir, rm } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -17,13 +18,25 @@ import type {
   Instance,
   Pattern,
 } from "../src/domain/model";
-const root = path.resolve("vendor/RPL"),
-  out = path.resolve("public/generated");
+const root = path.resolve(process.env.RPL_SOURCE_ROOT || "vendor/RPL"),
+  out = path.resolve(process.env.RPL_OUTPUT_DIR || "public/generated");
 const git = (...args: string[]) =>
   execFileSync("git", ["-C", root, ...args], { encoding: "utf8" }).trim();
 const commit = git("rev-parse", "HEAD");
 if (git("status", "--porcelain", "--untracked-files=no"))
   throw Error("RPL 子模块存在未提交修改；请先固定上游版本。");
+const sourceRecords = dataSourcesSchema.parse(
+  JSON.parse(
+    await readFile(
+      process.env.RPL_SOURCES_FILE || "metadata/data-sources.json",
+      "utf8",
+    ),
+  ),
+);
+const recordedRpl = sourceRecords.sources.find((s) => s.id === "rpl");
+if (!recordedRpl) throw Error("缺少 RPL 数据源记录");
+if (recordedRpl.version && recordedRpl.version !== commit)
+  throw Error("RPL 版本与同步记录不同，请运行 npm run data:sync 完成同步");
 const hash = (s: string) => createHash("sha256").update(s).digest("hex");
 async function walk(dir: string): Promise<string[]> {
   const a = await readdir(path.join(root, dir), { withFileTypes: true });
@@ -235,6 +248,7 @@ for (const pair of allowlist.pairs) {
   });
 }
 const catalog: Catalog = {
+  dataSources: sourceRecords.sources,
   manifest: {
     schemaVersion: 3,
     dataPolicy: "curated-allowlist",

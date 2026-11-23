@@ -1,3 +1,4 @@
+import path from "node:path";
 import { readFile } from "node:fs/promises";
 import { renderMappingTable } from "./mapping-table";
 import { createHash } from "node:crypto";
@@ -6,14 +7,19 @@ import {
   assertCatalogMatchesAllowlist,
 } from "./allowlist";
 import { catalogSchema } from "../src/domain/catalog";
-const raw = JSON.parse(await readFile("public/generated/catalog.json", "utf8"));
+const output = process.env.RPL_OUTPUT_DIR || "public/generated";
+const raw = JSON.parse(
+  await readFile(path.join(output, "catalog.json"), "utf8"),
+);
 const data = catalogSchema.parse(raw);
-for (const list of [data.patterns, data.instances, data.files])
-  if (new Set(list.map((x) => x.id)).size !== list.length)
-    throw Error("重复 ID");
-for (const p of data.patterns)
-  if (!data.files.some((x) => x.id === p.fileId))
-    throw Error(`模式文件缺失 ${p.id}`);
+const sources = JSON.parse(
+  await readFile(
+    process.env.RPL_SOURCES_FILE || "metadata/data-sources.json",
+    "utf8",
+  ),
+);
+if (JSON.stringify(data.dataSources) !== JSON.stringify(sources.sources))
+  throw Error("同步记录与展示数据不一致，请重新生成数据");
 for (const p of data.patterns) {
   const f = data.files.find((f) => f.id === p.fileId)!;
   const ids = p.diagnostics.map((d) => d.id);
@@ -40,9 +46,7 @@ for (const i of data.instances) {
     throw Error(`案例引用无效 ${i.id}`);
 }
 for (const f of data.files) {
-  const asset = JSON.parse(
-    await readFile(`public/generated/${f.asset}`, "utf8"),
-  );
+  const asset = JSON.parse(await readFile(path.join(output, f.asset), "utf8"));
   if (
     asset.code.split("\n").length !== f.lineCount ||
     !asset.html.includes("data-line=") ||
@@ -60,7 +64,7 @@ if (
 )
   throw Error("对应关系表与元数据不一致，请运行 npm run data:table");
 const generatedFiles = await import("node:fs/promises").then((fs) =>
-  fs.readdir("public/generated"),
+  fs.readdir(output),
 );
 if (
   generatedFiles.some(

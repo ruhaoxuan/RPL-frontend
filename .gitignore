@@ -24,3 +24,6 @@ Thumbs.db
 .env.*
 !.env.example
 !.env.*.example
+
+# 数据源同步期间的临时工作区
+/.data-sync/

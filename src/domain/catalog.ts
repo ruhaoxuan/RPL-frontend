@@ -1,3 +1,4 @@
+import { dataSourcesSchema } from "./dataSources.ts";
 import { z } from "zod";
 import type { Catalog } from "./model";
 
@@ -5,6 +6,7 @@ const line = z.number().int().positive();
 const strings = z.array(z.string());
 export const catalogSchema: z.ZodType<Catalog> = z
   .object({
+    dataSources: dataSourcesSchema.shape.sources,
     manifest: z.object({
       schemaVersion: z.literal(3),
       dataPolicy: z.literal("curated-allowlist"),
@@ -90,6 +92,14 @@ export const catalogSchema: z.ZodType<Catalog> = z
     ),
   })
   .superRefine((data, ctx) => {
+    if (
+      new Set(data.dataSources.map((s) => s.id)).size !==
+      data.dataSources.length
+    )
+      ctx.addIssue({ code: "custom", message: "重复数据源" });
+    const rpl = data.dataSources.find((s) => s.id === "rpl");
+    if (!rpl || (rpl.version && rpl.version !== data.manifest.sourceCommit))
+      ctx.addIssue({ code: "custom", message: "RPL 版本与同步记录不一致" });
     const files = new Set(data.files.map((f) => f.id));
     const patterns = new Set(data.patterns.map((p) => p.id));
     for (const items of [data.files, data.patterns, data.instances]) {

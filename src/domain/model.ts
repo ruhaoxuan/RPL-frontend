@@ -1,3 +1,4 @@
+import type { DataSource } from "./dataSources";
 export type Source = "clippy" | "codeql" | "cve" | "other";
 export type Result = "match" | "no_match" | "not_run" | "error";
 export interface CodeFile {
@@ -62,6 +63,7 @@ export interface Instance {
   }[];
 }
 export interface Catalog {
+  dataSources: DataSource[];
   manifest: {
     schemaVersion: number;
     dataPolicy: "curated-allowlist";

@@ -19,11 +19,13 @@ jobs:
       - run: npm test
       - run: npx playwright install --with-deps chromium
       - run: |
-          npm run preview -- --port 5173 > /tmp/rpl-preview.log 2>&1 &
+          RPL_AUTO_CHECK=0 npm run preview -- --port 5173 --strictPort > /tmp/rpl-preview.log 2>&1 &
+          ready=0
           for attempt in $(seq 1 30); do
-            if curl --silent --fail http://127.0.0.1:5173 > /dev/null; then break; fi
+            if curl --silent --fail http://127.0.0.1:5173 > /dev/null; then ready=1; break; fi
             sleep 1
           done
+          if [ "$ready" -ne 1 ]; then cat /tmp/rpl-preview.log; exit 1; fi
           npm run test:browser
       - uses: actions/upload-artifact@v4
         if: always()

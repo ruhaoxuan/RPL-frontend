@@ -1,3 +1,4 @@
+import { SyncSummary, DataSourceStatus } from "./components/DataSourceStatus";
 import React, {
   useEffect,
   useLayoutEffect,
@@ -415,6 +416,7 @@ function Home() {
       <div className={styles.hero}>
         <h1>RPL Atlas</h1>
       </div>
+      <SyncSummary sources={data.dataSources} />
       <SourceDistribution
         patterns={data.patterns}
         activeSource={params.get("source") || ""}
@@ -962,17 +964,29 @@ function Missing() {
 }
 function About() {
   const data = useData();
+  const location = useLocation();
+  useEffect(() => {
+    if (new URLSearchParams(location.search).get("section") !== "data-sources")
+      return;
+    const frame = requestAnimationFrame(() => {
+      const section = document.getElementById("data-sources");
+      section?.focus({ preventScroll: true });
+      section?.scrollIntoView({ block: "start", behavior: "instant" });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [location.search]);
   return (
     <>
       <Breadcrumb name="数据说明" />
       <div className={styles.detailHead}>
         <h1>数据说明</h1>
       </div>
+      <DataSourceStatus sources={data.dataSources} />
       <section className={styles.prose}>
         <h2>数据快照</h2>
         <p>
           当前展示 {data.patterns.length} 份 RPL 模式文件。上游提交{" "}
-          <code>{data.manifest.sourceCommit}</code>，生成时间{" "}
+          <code>{data.manifest.sourceCommit}</code>，展示数据生成时间{" "}
           {new Date(data.manifest.generatedAt).toLocaleString("zh-CN")}
           。详情中的更新时间来自对应文件的最后一次 Git 提交。
         </p>
@@ -1125,15 +1139,44 @@ function Layout() {
 }
 function App() {
   const [data, setData] = useState<Catalog | null>(null),
-    [error, setError] = useState(false);
+    [error, setError] = useState(false),
+    [refreshError, setRefreshError] = useState(false);
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}generated/catalog.json`)
-      .then((r) => {
-        if (!r.ok) throw Error();
-        return r.json();
+    let stopped = false,
+      request = 0,
+      loaded = false;
+    const load = () => {
+      const current = ++request;
+      return fetch(`${import.meta.env.BASE_URL}generated/catalog.json`, {
+        cache: "no-store",
       })
-      .then((value: unknown) => setData(catalogSchema.parse(value)))
-      .catch(() => setError(true));
+        .then((r) => {
+          if (!r.ok) throw Error();
+          return r.json();
+        })
+        .then((value: unknown) => {
+          const parsed = catalogSchema.parse(value);
+          if (stopped || current !== request) return;
+          loaded = true;
+          setData(parsed);
+          setError(false);
+          setRefreshError(false);
+        })
+        .catch(() => {
+          if (stopped || current !== request) return;
+          if (loaded) setRefreshError(true);
+          else setError(true);
+        });
+    };
+    void load();
+    const refresh = () => {
+      void load();
+    };
+    window.addEventListener("rpl:catalog-refresh", refresh);
+    return () => {
+      stopped = true;
+      window.removeEventListener("rpl:catalog-refresh", refresh);
+    };
   }, []);
   if (error)
     return (
@@ -1153,6 +1196,18 @@ function App() {
     );
   return (
     <DataContext.Provider value={data}>
+      {refreshError && (
+        <div role="alert" className={styles.refreshNotice}>
+          数据刷新失败，当前保留已加载的内容。
+          <button
+            onClick={() =>
+              window.dispatchEvent(new Event("rpl:catalog-refresh"))
+            }
+          >
+            重试刷新
+          </button>
+        </div>
+      )}
       <HashRouter>
         <Layout />
       </HashRouter>

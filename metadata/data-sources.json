@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "rpl",
+      "name": "RPL",
+      "type": "git",
+      "adapter": "rpl-git",
+      "url": "https://github.com/RPL-Toolchain/RPL",
+      "lastSyncAttemptAt": "2026-11-23T03:16:08.529Z",
+      "lastSyncedAt": "2026-11-23T03:16:08.529Z",
+      "version": "6fb85147beebab261f1df22db9dccf35f4ead641",
+      "lastAttemptStatus": "success",
+      "lastError": null,
+      "updateCheck": {
+        "enabled": true,
+        "intervalMinutes": 360,
+        "lastCheckedAt": "2026-11-23T03:48:12.095Z",
+        "status": "current",
+        "latestVersion": "6fb85147beebab261f1df22db9dccf35f4ead641",
+        "comparedVersion": "6fb85147beebab261f1df22db9dccf35f4ead641",
+        "error": null
+      }
+    }
+  ]
+}
